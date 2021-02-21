@@ -1,0 +1,1913 @@
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[0/499][0/122] Total Loss: 1.5580, Segmentation Loss: 0.9695, Classification Loss: 0.5886
+[0/499][1/122] Total Loss: 1.6074, Segmentation Loss: 0.9713, Classification Loss: 0.6361
+[0/499][2/122] Total Loss: 1.3899, Segmentation Loss: 0.9681, Classification Loss: 0.4218
+[0/499][3/122] Total Loss: 1.4585, Segmentation Loss: 0.9652, Classification Loss: 0.4932
+[0/499][4/122] Total Loss: 1.6735, Segmentation Loss: 0.9660, Classification Loss: 0.7075
+[0/499][5/122] Total Loss: 1.3758, Segmentation Loss: 0.9540, Classification Loss: 0.4218
+[0/499][6/122] Total Loss: 1.4461, Segmentation Loss: 0.9528, Classification Loss: 0.4932
+[0/499][7/122] Total Loss: 1.6643, Segmentation Loss: 0.9568, Classification Loss: 0.7075
+[0/499][8/122] Total Loss: 1.3807, Segmentation Loss: 0.9589, Classification Loss: 0.4218
+[0/499][9/122] Total Loss: 1.5183, Segmentation Loss: 0.9536, Classification Loss: 0.5647
+[0/499][10/122] Total Loss: 1.6571, Segmentation Loss: 0.9496, Classification Loss: 0.7075
+[0/499][11/122] Total Loss: 1.5166, Segmentation Loss: 0.9519, Classification Loss: 0.5647
+[0/499][12/122] Total Loss: 1.5133, Segmentation Loss: 0.9486, Classification Loss: 0.5647
+[0/499][13/122] Total Loss: 1.5932, Segmentation Loss: 0.9571, Classification Loss: 0.6361
+[0/499][14/122] Total Loss: 1.5142, Segmentation Loss: 0.9495, Classification Loss: 0.5647
+[0/499][15/122] Total Loss: 1.4396, Segmentation Loss: 0.9464, Classification Loss: 0.4932
+[0/499][16/122] Total Loss: 1.5158, Segmentation Loss: 0.9511, Classification Loss: 0.5647
+[0/499][17/122] Total Loss: 1.5799, Segmentation Loss: 0.9475, Classification Loss: 0.6324
+[0/499][18/122] Total Loss: 1.6041, Segmentation Loss: 0.9508, Classification Loss: 0.6532
+[0/499][19/122] Total Loss: 1.7486, Segmentation Loss: 0.9497, Classification Loss: 0.7989
+[0/499][20/122] Total Loss: 1.6714, Segmentation Loss: 0.9440, Classification Loss: 0.7275
+[0/499][21/122] Total Loss: 1.7432, Segmentation Loss: 0.9443, Classification Loss: 0.7989
+[0/499][22/122] Total Loss: 1.6682, Segmentation Loss: 0.9407, Classification Loss: 0.7275
+[0/499][23/122] Total Loss: 1.7435, Segmentation Loss: 0.9446, Classification Loss: 0.7989
+[0/499][24/122] Total Loss: 1.7379, Segmentation Loss: 0.9390, Classification Loss: 0.7989
+[0/499][25/122] Total Loss: 1.5177, Segmentation Loss: 0.9331, Classification Loss: 0.5846
+[0/499][26/122] Total Loss: 1.7404, Segmentation Loss: 0.9415, Classification Loss: 0.7989
+[0/499][27/122] Total Loss: 1.8066, Segmentation Loss: 0.9363, Classification Loss: 0.8703
+[0/499][28/122] Total Loss: 1.5929, Segmentation Loss: 0.9368, Classification Loss: 0.6560
+[0/499][29/122] Total Loss: 1.5827, Segmentation Loss: 0.9267, Classification Loss: 0.6560
+[0/499][30/122] Total Loss: 1.7959, Segmentation Loss: 0.9256, Classification Loss: 0.8703
+[0/499][31/122] Total Loss: 1.5065, Segmentation Loss: 0.9219, Classification Loss: 0.5846
+[0/499][32/122] Total Loss: 1.6508, Segmentation Loss: 0.9233, Classification Loss: 0.7275
+[0/499][33/122] Total Loss: 1.6470, Segmentation Loss: 0.9195, Classification Loss: 0.7275
+[0/499][34/122] Total Loss: 1.7188, Segmentation Loss: 0.9199, Classification Loss: 0.7989
+[0/499][35/122] Total Loss: 1.6450, Segmentation Loss: 0.9176, Classification Loss: 0.7275
+[0/499][36/122] Total Loss: 1.5027, Segmentation Loss: 0.9181, Classification Loss: 0.5846
+[0/499][37/122] Total Loss: 1.5743, Segmentation Loss: 0.9182, Classification Loss: 0.6560
+[0/499][38/122] Total Loss: 1.7858, Segmentation Loss: 0.9155, Classification Loss: 0.8703
+[0/499][39/122] Total Loss: 1.6404, Segmentation Loss: 0.9130, Classification Loss: 0.7275
+[0/499][40/122] Total Loss: 1.5048, Segmentation Loss: 0.9201, Classification Loss: 0.5846
+[0/499][41/122] Total Loss: 1.6422, Segmentation Loss: 0.9148, Classification Loss: 0.7275
+[0/499][42/122] Total Loss: 1.8014, Segmentation Loss: 0.9310, Classification Loss: 0.8703
+[0/499][43/122] Total Loss: 1.8006, Segmentation Loss: 0.9303, Classification Loss: 0.8703
+[0/499][44/122] Total Loss: 1.6423, Segmentation Loss: 0.9149, Classification Loss: 0.7275
+[0/499][45/122] Total Loss: 1.6415, Segmentation Loss: 0.9140, Classification Loss: 0.7275
+[0/499][46/122] Total Loss: 1.5704, Segmentation Loss: 0.9144, Classification Loss: 0.6560
+[0/499][47/122] Total Loss: 1.8210, Segmentation Loss: 0.9507, Classification Loss: 0.8703
+[0/499][48/122] Total Loss: 1.7104, Segmentation Loss: 0.9115, Classification Loss: 0.7989
+[0/499][49/122] Total Loss: 1.5726, Segmentation Loss: 0.9166, Classification Loss: 0.6560
+[0/499][50/122] Total Loss: 1.7111, Segmentation Loss: 0.9122, Classification Loss: 0.7989
+[0/499][51/122] Total Loss: 1.6380, Segmentation Loss: 0.9105, Classification Loss: 0.7275
+[0/499][52/122] Total Loss: 1.5625, Segmentation Loss: 0.9064, Classification Loss: 0.6560
+[0/499][53/122] Total Loss: 1.6373, Segmentation Loss: 0.9098, Classification Loss: 0.7275
+[0/499][54/122] Total Loss: 1.7150, Segmentation Loss: 0.9161, Classification Loss: 0.7989
+[0/499][55/122] Total Loss: 1.7223, Segmentation Loss: 0.9234, Classification Loss: 0.7989
+[0/499][56/122] Total Loss: 1.7147, Segmentation Loss: 0.9158, Classification Loss: 0.7989
+[0/499][57/122] Total Loss: 1.7091, Segmentation Loss: 0.9102, Classification Loss: 0.7989
+[0/499][58/122] Total Loss: 1.7102, Segmentation Loss: 0.9113, Classification Loss: 0.7989
+[0/499][59/122] Total Loss: 1.5661, Segmentation Loss: 0.9101, Classification Loss: 0.6560
+[0/499][60/122] Total Loss: 1.6411, Segmentation Loss: 0.9137, Classification Loss: 0.7275
+[0/499][61/122] Total Loss: 1.6470, Segmentation Loss: 0.9195, Classification Loss: 0.7275
+[0/499][62/122] Total Loss: 1.7135, Segmentation Loss: 0.9146, Classification Loss: 0.7989
+[0/499][63/122] Total Loss: 1.5717, Segmentation Loss: 0.9156, Classification Loss: 0.6560
+[0/499][64/122] Total Loss: 1.7087, Segmentation Loss: 0.9098, Classification Loss: 0.7989
+[0/499][65/122] Total Loss: 1.4954, Segmentation Loss: 0.9108, Classification Loss: 0.5846
+[0/499][66/122] Total Loss: 1.7084, Segmentation Loss: 0.9095, Classification Loss: 0.7989
+[0/499][67/122] Total Loss: 1.7118, Segmentation Loss: 0.9129, Classification Loss: 0.7989
+[0/499][68/122] Total Loss: 1.7857, Segmentation Loss: 0.9154, Classification Loss: 0.8703
+[0/499][69/122] Total Loss: 1.4991, Segmentation Loss: 0.9145, Classification Loss: 0.5846
+[0/499][70/122] Total Loss: 1.7872, Segmentation Loss: 0.9168, Classification Loss: 0.8703
+[0/499][71/122] Total Loss: 1.4835, Segmentation Loss: 0.8989, Classification Loss: 0.5846
+[0/499][72/122] Total Loss: 1.5585, Segmentation Loss: 0.9025, Classification Loss: 0.6560
+[0/499][73/122] Total Loss: 1.7855, Segmentation Loss: 0.9152, Classification Loss: 0.8703
+[0/499][74/122] Total Loss: 1.6499, Segmentation Loss: 0.9224, Classification Loss: 0.7275
+[0/499][75/122] Total Loss: 1.7075, Segmentation Loss: 0.9086, Classification Loss: 0.7989
+[0/499][76/122] Total Loss: 1.5594, Segmentation Loss: 0.9033, Classification Loss: 0.6560
+[0/499][77/122] Total Loss: 1.6211, Segmentation Loss: 0.8936, Classification Loss: 0.7275
+[0/499][78/122] Total Loss: 1.7107, Segmentation Loss: 0.9119, Classification Loss: 0.7989
+[0/499][79/122] Total Loss: 1.5462, Segmentation Loss: 0.8902, Classification Loss: 0.6560
+[0/499][80/122] Total Loss: 1.7045, Segmentation Loss: 0.9162, Classification Loss: 0.7883
+[0/499][81/122] Total Loss: 1.5792, Segmentation Loss: 0.8947, Classification Loss: 0.6845
+[0/499][82/122] Total Loss: 1.5516, Segmentation Loss: 0.9155, Classification Loss: 0.6361
+[0/499][83/122] Total Loss: 1.4065, Segmentation Loss: 0.9132, Classification Loss: 0.4932
+[0/499][84/122] Total Loss: 1.7641, Segmentation Loss: 0.9137, Classification Loss: 0.8504
+[0/499][85/122] Total Loss: 1.4610, Segmentation Loss: 0.8964, Classification Loss: 0.5647
+[0/499][86/122] Total Loss: 1.4551, Segmentation Loss: 0.8904, Classification Loss: 0.5647
+[0/499][87/122] Total Loss: 1.3930, Segmentation Loss: 0.8998, Classification Loss: 0.4932
+[0/499][88/122] Total Loss: 1.3303, Segmentation Loss: 0.9085, Classification Loss: 0.4218
+[0/499][89/122] Total Loss: 1.8338, Segmentation Loss: 0.9120, Classification Loss: 0.9218
+[0/499][90/122] Total Loss: 1.3901, Segmentation Loss: 0.8969, Classification Loss: 0.4932
+[0/499][91/122] Total Loss: 1.3136, Segmentation Loss: 0.8918, Classification Loss: 0.4218
+[0/499][92/122] Total Loss: 1.3749, Segmentation Loss: 0.8817, Classification Loss: 0.4932
+[0/499][93/122] Total Loss: 1.5373, Segmentation Loss: 0.9012, Classification Loss: 0.6361
+[0/499][94/122] Total Loss: 1.3073, Segmentation Loss: 0.8855, Classification Loss: 0.4218
+[0/499][95/122] Total Loss: 1.4715, Segmentation Loss: 0.9068, Classification Loss: 0.5647
+[0/499][96/122] Total Loss: 1.5722, Segmentation Loss: 0.9361, Classification Loss: 0.6361
+[0/499][97/122] Total Loss: 1.3197, Segmentation Loss: 0.8979, Classification Loss: 0.4218
+[0/499][98/122] Total Loss: 1.3058, Segmentation Loss: 0.8840, Classification Loss: 0.4218
+[0/499][99/122] Total Loss: 1.3185, Segmentation Loss: 0.8967, Classification Loss: 0.4218
+[0/499][100/122] Total Loss: 1.6013, Segmentation Loss: 0.8937, Classification Loss: 0.7075
+[0/499][101/122] Total Loss: 1.5249, Segmentation Loss: 0.8888, Classification Loss: 0.6361
+[0/499][102/122] Total Loss: 1.5244, Segmentation Loss: 0.8883, Classification Loss: 0.6361
+[0/499][103/122] Total Loss: 1.3819, Segmentation Loss: 0.8886, Classification Loss: 0.4932
+[0/499][104/122] Total Loss: 1.3789, Segmentation Loss: 0.8857, Classification Loss: 0.4932
+[0/499][105/122] Total Loss: 1.5281, Segmentation Loss: 0.8920, Classification Loss: 0.6361
+[0/499][106/122] Total Loss: 1.3723, Segmentation Loss: 0.8791, Classification Loss: 0.4932
+[0/499][107/122] Total Loss: 1.5355, Segmentation Loss: 0.8994, Classification Loss: 0.6361
+[0/499][108/122] Total Loss: 1.5294, Segmentation Loss: 0.8933, Classification Loss: 0.6361
+[0/499][109/122] Total Loss: 1.8784, Segmentation Loss: 0.9566, Classification Loss: 0.9218
+[0/499][110/122] Total Loss: 1.4121, Segmentation Loss: 0.9188, Classification Loss: 0.4932
+[0/499][111/122] Total Loss: 1.3039, Segmentation Loss: 0.8821, Classification Loss: 0.4218
+[0/499][112/122] Total Loss: 1.3942, Segmentation Loss: 0.9010, Classification Loss: 0.4932
+[0/499][113/122] Total Loss: 1.4097, Segmentation Loss: 0.9165, Classification Loss: 0.4932
+[0/499][114/122] Total Loss: 1.5693, Segmentation Loss: 0.9332, Classification Loss: 0.6361
+[0/499][115/122] Total Loss: 1.5740, Segmentation Loss: 0.9380, Classification Loss: 0.6361
+[0/499][116/122] Total Loss: 1.3871, Segmentation Loss: 0.8939, Classification Loss: 0.4932
+[0/499][117/122] Total Loss: 1.4667, Segmentation Loss: 0.9021, Classification Loss: 0.5647
+[0/499][118/122] Total Loss: 1.8643, Segmentation Loss: 0.9425, Classification Loss: 0.9218
+[0/499][119/122] Total Loss: 1.3823, Segmentation Loss: 0.8891, Classification Loss: 0.4932
+[0/499][120/122] Total Loss: 1.6094, Segmentation Loss: 0.9019, Classification Loss: 0.7075
+[0/499][121/122] Total Loss: 1.6102, Segmentation Loss: 0.9027, Classification Loss: 0.7075
+[0/499][122/122] Total Loss: 1.7411, Segmentation Loss: 0.8908, Classification Loss: 0.8504
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=500, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+Namespace(batchSize=2, bnMomentum=0.1, epochs=10, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[0/9][0/122] Total Loss: 1.6171, Segmentation Loss: 0.9709, Classification Loss: 0.6462
+[0/9][1/122] Total Loss: 1.5722, Segmentation Loss: 0.9704, Classification Loss: 0.6018
+[0/9][2/122] Total Loss: 1.5692, Segmentation Loss: 0.9674, Classification Loss: 0.6018
+[0/9][3/122] Total Loss: 1.4940, Segmentation Loss: 0.9636, Classification Loss: 0.5303
+[0/9][4/122] Total Loss: 1.6319, Segmentation Loss: 0.9587, Classification Loss: 0.6732
+[0/9][5/122] Total Loss: 1.5556, Segmentation Loss: 0.9538, Classification Loss: 0.6018
+[0/9][6/122] Total Loss: 1.5556, Segmentation Loss: 0.9538, Classification Loss: 0.6018
+[0/9][7/122] Total Loss: 1.4777, Segmentation Loss: 0.9474, Classification Loss: 0.5303
+[0/9][8/122] Total Loss: 1.5606, Segmentation Loss: 0.9589, Classification Loss: 0.6018
+[0/9][9/122] Total Loss: 1.6204, Segmentation Loss: 0.9472, Classification Loss: 0.6732
+[0/9][10/122] Total Loss: 1.5436, Segmentation Loss: 0.9418, Classification Loss: 0.6018
+[0/9][11/122] Total Loss: 1.4712, Segmentation Loss: 0.9409, Classification Loss: 0.5303
+[0/9][12/122] Total Loss: 1.4735, Segmentation Loss: 0.9431, Classification Loss: 0.5303
+[0/9][13/122] Total Loss: 1.6938, Segmentation Loss: 0.9491, Classification Loss: 0.7446
+[0/9][14/122] Total Loss: 1.4670, Segmentation Loss: 0.9367, Classification Loss: 0.5303
+[0/9][15/122] Total Loss: 1.4649, Segmentation Loss: 0.9345, Classification Loss: 0.5303
+[0/9][16/122] Total Loss: 1.4733, Segmentation Loss: 0.9429, Classification Loss: 0.5303
+[0/9][17/122] Total Loss: 1.5442, Segmentation Loss: 0.9424, Classification Loss: 0.6018
+[0/9][18/122] Total Loss: 1.4600, Segmentation Loss: 0.9297, Classification Loss: 0.5303
+[0/9][19/122] Total Loss: 1.4593, Segmentation Loss: 0.9290, Classification Loss: 0.5303
+[0/9][20/122] Total Loss: 1.6056, Segmentation Loss: 0.9324, Classification Loss: 0.6732
+[0/9][21/122] Total Loss: 1.4714, Segmentation Loss: 0.9410, Classification Loss: 0.5303
+[0/9][22/122] Total Loss: 1.5370, Segmentation Loss: 0.9352, Classification Loss: 0.6018
+[0/9][23/122] Total Loss: 1.4523, Segmentation Loss: 0.9220, Classification Loss: 0.5303
+[0/9][24/122] Total Loss: 1.4516, Segmentation Loss: 0.9213, Classification Loss: 0.5303
+[0/9][25/122] Total Loss: 1.5215, Segmentation Loss: 0.9198, Classification Loss: 0.6018
+[0/9][26/122] Total Loss: 1.5258, Segmentation Loss: 0.9240, Classification Loss: 0.6018
+[0/9][27/122] Total Loss: 1.5199, Segmentation Loss: 0.9181, Classification Loss: 0.6018
+[0/9][28/122] Total Loss: 1.7573, Segmentation Loss: 0.9413, Classification Loss: 0.8161
+[0/9][29/122] Total Loss: 1.5198, Segmentation Loss: 0.9180, Classification Loss: 0.6018
+[0/9][30/122] Total Loss: 1.5204, Segmentation Loss: 0.9186, Classification Loss: 0.6018
+[0/9][31/122] Total Loss: 1.4529, Segmentation Loss: 0.9225, Classification Loss: 0.5303
+[0/9][32/122] Total Loss: 1.4506, Segmentation Loss: 0.9203, Classification Loss: 0.5303
+[0/9][33/122] Total Loss: 1.4462, Segmentation Loss: 0.9159, Classification Loss: 0.5303
+[0/9][34/122] Total Loss: 1.4466, Segmentation Loss: 0.9163, Classification Loss: 0.5303
+[0/9][35/122] Total Loss: 1.5873, Segmentation Loss: 0.9141, Classification Loss: 0.6732
+[0/9][36/122] Total Loss: 1.4435, Segmentation Loss: 0.9132, Classification Loss: 0.5303
+[0/9][37/122] Total Loss: 1.7406, Segmentation Loss: 0.9245, Classification Loss: 0.8161
+[0/9][38/122] Total Loss: 1.5150, Segmentation Loss: 0.9132, Classification Loss: 0.6018
+[0/9][39/122] Total Loss: 1.5240, Segmentation Loss: 0.9222, Classification Loss: 0.6018
+[0/9][40/122] Total Loss: 1.5155, Segmentation Loss: 0.9137, Classification Loss: 0.6018
+[0/9][41/122] Total Loss: 1.5216, Segmentation Loss: 0.9198, Classification Loss: 0.6018
+[0/9][42/122] Total Loss: 1.5208, Segmentation Loss: 0.9190, Classification Loss: 0.6018
+[0/9][43/122] Total Loss: 1.4466, Segmentation Loss: 0.9163, Classification Loss: 0.5303
+[0/9][44/122] Total Loss: 1.4504, Segmentation Loss: 0.9201, Classification Loss: 0.5303
+[0/9][45/122] Total Loss: 1.4535, Segmentation Loss: 0.9231, Classification Loss: 0.5303
+[0/9][46/122] Total Loss: 1.4458, Segmentation Loss: 0.9155, Classification Loss: 0.5303
+[0/9][47/122] Total Loss: 1.5930, Segmentation Loss: 0.9198, Classification Loss: 0.6732
+[0/9][48/122] Total Loss: 1.4493, Segmentation Loss: 0.9190, Classification Loss: 0.5303
+[0/9][49/122] Total Loss: 1.4441, Segmentation Loss: 0.9138, Classification Loss: 0.5303
+[0/9][50/122] Total Loss: 1.5202, Segmentation Loss: 0.9184, Classification Loss: 0.6018
+[0/9][51/122] Total Loss: 1.6746, Segmentation Loss: 0.9299, Classification Loss: 0.7446
+[0/9][52/122] Total Loss: 1.5211, Segmentation Loss: 0.9193, Classification Loss: 0.6018
+[0/9][53/122] Total Loss: 1.5859, Segmentation Loss: 0.9127, Classification Loss: 0.6732
+[0/9][54/122] Total Loss: 1.4462, Segmentation Loss: 0.9159, Classification Loss: 0.5303
+[0/9][55/122] Total Loss: 1.4428, Segmentation Loss: 0.9125, Classification Loss: 0.5303
+[0/9][56/122] Total Loss: 1.4601, Segmentation Loss: 0.9297, Classification Loss: 0.5303
+[0/9][57/122] Total Loss: 1.5173, Segmentation Loss: 0.9155, Classification Loss: 0.6018
+[0/9][58/122] Total Loss: 1.5185, Segmentation Loss: 0.9167, Classification Loss: 0.6018
+[0/9][59/122] Total Loss: 1.5214, Segmentation Loss: 0.9196, Classification Loss: 0.6018
+[0/9][60/122] Total Loss: 1.4421, Segmentation Loss: 0.9118, Classification Loss: 0.5303
+[0/9][61/122] Total Loss: 1.4488, Segmentation Loss: 0.9185, Classification Loss: 0.5303
+[0/9][62/122] Total Loss: 1.5156, Segmentation Loss: 0.9139, Classification Loss: 0.6018
+[0/9][63/122] Total Loss: 1.5181, Segmentation Loss: 0.9163, Classification Loss: 0.6018
+[0/9][64/122] Total Loss: 1.6737, Segmentation Loss: 0.9291, Classification Loss: 0.7446
+[0/9][65/122] Total Loss: 1.4417, Segmentation Loss: 0.9114, Classification Loss: 0.5303
+[0/9][66/122] Total Loss: 1.7295, Segmentation Loss: 0.9134, Classification Loss: 0.8161
+[0/9][67/122] Total Loss: 1.4556, Segmentation Loss: 0.9253, Classification Loss: 0.5303
+[0/9][68/122] Total Loss: 1.5276, Segmentation Loss: 0.9258, Classification Loss: 0.6018
+[0/9][69/122] Total Loss: 1.4440, Segmentation Loss: 0.9136, Classification Loss: 0.5303
+[0/9][70/122] Total Loss: 1.4529, Segmentation Loss: 0.9226, Classification Loss: 0.5303
+[0/9][71/122] Total Loss: 1.5151, Segmentation Loss: 0.9134, Classification Loss: 0.6018
+[0/9][72/122] Total Loss: 1.5160, Segmentation Loss: 0.9142, Classification Loss: 0.6018
+[0/9][73/122] Total Loss: 1.4488, Segmentation Loss: 0.9185, Classification Loss: 0.5303
+[0/9][74/122] Total Loss: 1.5883, Segmentation Loss: 0.9151, Classification Loss: 0.6732
+[0/9][75/122] Total Loss: 1.5124, Segmentation Loss: 0.9106, Classification Loss: 0.6018
+[0/9][76/122] Total Loss: 1.5832, Segmentation Loss: 0.9100, Classification Loss: 0.6732
+[0/9][77/122] Total Loss: 1.5036, Segmentation Loss: 0.9018, Classification Loss: 0.6018
+[0/9][78/122] Total Loss: 1.4388, Segmentation Loss: 0.9085, Classification Loss: 0.5303
+[0/9][79/122] Total Loss: 1.4285, Segmentation Loss: 0.8982, Classification Loss: 0.5303
+[0/9][80/122] Total Loss: 1.5666, Segmentation Loss: 0.8934, Classification Loss: 0.6732
+[0/9][81/122] Total Loss: 1.5006, Segmentation Loss: 0.8988, Classification Loss: 0.6018
+[0/9][82/122] Total Loss: 1.5180, Segmentation Loss: 0.9163, Classification Loss: 0.6018
+[0/9][83/122] Total Loss: 1.5056, Segmentation Loss: 0.9039, Classification Loss: 0.6018
+[0/9][84/122] Total Loss: 1.5620, Segmentation Loss: 0.8888, Classification Loss: 0.6732
+[0/9][85/122] Total Loss: 1.5124, Segmentation Loss: 0.9106, Classification Loss: 0.6018
+[0/9][86/122] Total Loss: 1.5059, Segmentation Loss: 0.9041, Classification Loss: 0.6018
+[0/9][87/122] Total Loss: 1.6404, Segmentation Loss: 0.8957, Classification Loss: 0.7446
+[0/9][88/122] Total Loss: 1.5700, Segmentation Loss: 0.8968, Classification Loss: 0.6732
+[0/9][89/122] Total Loss: 1.5220, Segmentation Loss: 0.9202, Classification Loss: 0.6018
+[0/9][90/122] Total Loss: 1.4939, Segmentation Loss: 0.8921, Classification Loss: 0.6018
+[0/9][91/122] Total Loss: 1.4184, Segmentation Loss: 0.8880, Classification Loss: 0.5303
+[0/9][92/122] Total Loss: 1.4131, Segmentation Loss: 0.8827, Classification Loss: 0.5303
+[0/9][93/122] Total Loss: 1.5009, Segmentation Loss: 0.8992, Classification Loss: 0.6018
+[0/9][94/122] Total Loss: 1.4246, Segmentation Loss: 0.8943, Classification Loss: 0.5303
+[0/9][95/122] Total Loss: 1.5018, Segmentation Loss: 0.9000, Classification Loss: 0.6018
+[0/9][96/122] Total Loss: 1.4938, Segmentation Loss: 0.8921, Classification Loss: 0.6018
+[0/9][97/122] Total Loss: 1.5553, Segmentation Loss: 0.8821, Classification Loss: 0.6732
+[0/9][98/122] Total Loss: 1.5110, Segmentation Loss: 0.9093, Classification Loss: 0.6018
+[0/9][99/122] Total Loss: 1.5599, Segmentation Loss: 0.8867, Classification Loss: 0.6732
+[0/9][100/122] Total Loss: 1.6544, Segmentation Loss: 0.9098, Classification Loss: 0.7446
+[0/9][101/122] Total Loss: 1.4987, Segmentation Loss: 0.8969, Classification Loss: 0.6018
+[0/9][102/122] Total Loss: 1.5644, Segmentation Loss: 0.8912, Classification Loss: 0.6732
+[0/9][103/122] Total Loss: 1.4188, Segmentation Loss: 0.8884, Classification Loss: 0.5303
+[0/9][104/122] Total Loss: 1.4055, Segmentation Loss: 0.8751, Classification Loss: 0.5303
+[0/9][105/122] Total Loss: 1.4109, Segmentation Loss: 0.8806, Classification Loss: 0.5303
+[0/9][106/122] Total Loss: 1.5803, Segmentation Loss: 0.9071, Classification Loss: 0.6732
+[0/9][107/122] Total Loss: 1.5597, Segmentation Loss: 0.8865, Classification Loss: 0.6732
+[0/9][108/122] Total Loss: 1.5041, Segmentation Loss: 0.9023, Classification Loss: 0.6018
+[0/9][109/122] Total Loss: 1.4099, Segmentation Loss: 0.8796, Classification Loss: 0.5303
+[0/9][110/122] Total Loss: 1.4796, Segmentation Loss: 0.8779, Classification Loss: 0.6018
+[0/9][111/122] Total Loss: 1.4807, Segmentation Loss: 0.8790, Classification Loss: 0.6018
+[0/9][112/122] Total Loss: 1.5041, Segmentation Loss: 0.9023, Classification Loss: 0.6018
+[0/9][113/122] Total Loss: 1.4799, Segmentation Loss: 0.8782, Classification Loss: 0.6018
+[0/9][114/122] Total Loss: 1.4790, Segmentation Loss: 0.8772, Classification Loss: 0.6018
+[0/9][115/122] Total Loss: 1.5144, Segmentation Loss: 0.9126, Classification Loss: 0.6018
+[0/9][116/122] Total Loss: 1.5006, Segmentation Loss: 0.8988, Classification Loss: 0.6018
+[0/9][117/122] Total Loss: 1.5154, Segmentation Loss: 0.9137, Classification Loss: 0.6018
+[0/9][118/122] Total Loss: 1.5626, Segmentation Loss: 0.8894, Classification Loss: 0.6732
+[0/9][119/122] Total Loss: 1.5112, Segmentation Loss: 0.9095, Classification Loss: 0.6018
+[0/9][120/122] Total Loss: 1.4022, Segmentation Loss: 0.8719, Classification Loss: 0.5303
+[0/9][121/122] Total Loss: 1.4038, Segmentation Loss: 0.8735, Classification Loss: 0.5303
+[0/9][122/122] Total Loss: 1.5966, Segmentation Loss: 0.9234, Classification Loss: 0.6732
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[0/9][0/30] Total Loss: 1.5277, Segmentation Loss: 0.9259, Classification Loss: 0.6018
+-----use_gpu  False ------
+Namespace(batchSize=2, bnMomentum=0.1, epochs=10, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+-----use_gpu  False ------
+Namespace(batchSize=2, bnMomentum=0.1, epochs=10, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[0/9][0/122] Total Loss: 1.4372, Segmentation Loss: 0.9719, Classification Loss: 0.4653
+[0/9][1/122] Total Loss: 1.7860, Segmentation Loss: 0.9727, Classification Loss: 0.8133
+[0/9][2/122] Total Loss: 1.6396, Segmentation Loss: 0.9692, Classification Loss: 0.6704
+[0/9][3/122] Total Loss: 1.7092, Segmentation Loss: 0.9674, Classification Loss: 0.7418
+[0/9][4/122] Total Loss: 1.7068, Segmentation Loss: 0.9650, Classification Loss: 0.7418
+[0/9][5/122] Total Loss: 1.6294, Segmentation Loss: 0.9590, Classification Loss: 0.6704
+[0/9][6/122] Total Loss: 1.9169, Segmentation Loss: 0.9607, Classification Loss: 0.9561
+[0/9][7/122] Total Loss: 1.8391, Segmentation Loss: 0.9544, Classification Loss: 0.8847
+[0/9][8/122] Total Loss: 1.5491, Segmentation Loss: 0.9501, Classification Loss: 0.5990
+[0/9][9/122] Total Loss: 1.6209, Segmentation Loss: 0.9505, Classification Loss: 0.6704
+[0/9][10/122] Total Loss: 1.4063, Segmentation Loss: 0.9502, Classification Loss: 0.4561
+[0/9][11/122] Total Loss: 1.6208, Segmentation Loss: 0.9504, Classification Loss: 0.6704
+[0/9][12/122] Total Loss: 1.4063, Segmentation Loss: 0.9502, Classification Loss: 0.4561
+[0/9][13/122] Total Loss: 1.4730, Segmentation Loss: 0.9455, Classification Loss: 0.5275
+[0/9][14/122] Total Loss: 1.6156, Segmentation Loss: 0.9452, Classification Loss: 0.6704
+[0/9][15/122] Total Loss: 1.5410, Segmentation Loss: 0.9420, Classification Loss: 0.5990
+[0/9][16/122] Total Loss: 1.6850, Segmentation Loss: 0.9431, Classification Loss: 0.7418
+[0/9][17/122] Total Loss: 1.8300, Segmentation Loss: 0.9453, Classification Loss: 0.8847
+[0/9][18/122] Total Loss: 1.6876, Segmentation Loss: 0.9457, Classification Loss: 0.7418
+[0/9][19/122] Total Loss: 1.5382, Segmentation Loss: 0.9393, Classification Loss: 0.5990
+[0/9][20/122] Total Loss: 1.6133, Segmentation Loss: 0.9429, Classification Loss: 0.6704
+[0/9][21/122] Total Loss: 1.6804, Segmentation Loss: 0.9386, Classification Loss: 0.7418
+[0/9][22/122] Total Loss: 1.5423, Segmentation Loss: 0.9433, Classification Loss: 0.5990
+[0/9][23/122] Total Loss: 1.5380, Segmentation Loss: 0.9390, Classification Loss: 0.5990
+[0/9][24/122] Total Loss: 1.6803, Segmentation Loss: 0.9384, Classification Loss: 0.7418
+[0/9][25/122] Total Loss: 1.4681, Segmentation Loss: 0.9405, Classification Loss: 0.5275
+[0/9][26/122] Total Loss: 1.6858, Segmentation Loss: 0.9440, Classification Loss: 0.7418
+[0/9][27/122] Total Loss: 1.8534, Segmentation Loss: 0.9687, Classification Loss: 0.8847
+[0/9][28/122] Total Loss: 1.7520, Segmentation Loss: 0.9387, Classification Loss: 0.8133
+[0/9][29/122] Total Loss: 1.3131, Segmentation Loss: 0.9284, Classification Loss: 0.3847
+[0/9][30/122] Total Loss: 1.4646, Segmentation Loss: 0.9370, Classification Loss: 0.5275
+[0/9][31/122] Total Loss: 1.5407, Segmentation Loss: 0.9417, Classification Loss: 0.5990
+[0/9][32/122] Total Loss: 1.4536, Segmentation Loss: 0.9260, Classification Loss: 0.5275
+[0/9][33/122] Total Loss: 1.3966, Segmentation Loss: 0.9404, Classification Loss: 0.4561
+[0/9][34/122] Total Loss: 1.6764, Segmentation Loss: 0.9345, Classification Loss: 0.7418
+[0/9][35/122] Total Loss: 1.5987, Segmentation Loss: 0.9283, Classification Loss: 0.6704
+[0/9][36/122] Total Loss: 1.5312, Segmentation Loss: 0.9322, Classification Loss: 0.5990
+[0/9][37/122] Total Loss: 1.6064, Segmentation Loss: 0.9360, Classification Loss: 0.6704
+[0/9][38/122] Total Loss: 1.7443, Segmentation Loss: 0.9310, Classification Loss: 0.8133
+[0/9][39/122] Total Loss: 1.5320, Segmentation Loss: 0.9330, Classification Loss: 0.5990
+[0/9][40/122] Total Loss: 1.5317, Segmentation Loss: 0.9328, Classification Loss: 0.5990
+[0/9][41/122] Total Loss: 1.6073, Segmentation Loss: 0.9369, Classification Loss: 0.6704
+[0/9][42/122] Total Loss: 1.7527, Segmentation Loss: 0.9394, Classification Loss: 0.8133
+[0/9][43/122] Total Loss: 1.5329, Segmentation Loss: 0.9339, Classification Loss: 0.5990
+[0/9][44/122] Total Loss: 1.3171, Segmentation Loss: 0.9324, Classification Loss: 0.3847
+[0/9][45/122] Total Loss: 1.5954, Segmentation Loss: 0.9250, Classification Loss: 0.6704
+[0/9][46/122] Total Loss: 1.5337, Segmentation Loss: 0.9347, Classification Loss: 0.5990
+[0/9][47/122] Total Loss: 1.4628, Segmentation Loss: 0.9353, Classification Loss: 0.5275
+[0/9][48/122] Total Loss: 1.3097, Segmentation Loss: 0.9250, Classification Loss: 0.3847
+[0/9][49/122] Total Loss: 1.5485, Segmentation Loss: 0.9495, Classification Loss: 0.5990
+[0/9][50/122] Total Loss: 1.4654, Segmentation Loss: 0.9379, Classification Loss: 0.5275
+[0/9][51/122] Total Loss: 1.4634, Segmentation Loss: 0.9358, Classification Loss: 0.5275
+[0/9][52/122] Total Loss: 1.8242, Segmentation Loss: 0.9395, Classification Loss: 0.8847
+[0/9][53/122] Total Loss: 1.8003, Segmentation Loss: 0.9156, Classification Loss: 0.8847
+[0/9][54/122] Total Loss: 1.5321, Segmentation Loss: 0.9332, Classification Loss: 0.5990
+[0/9][55/122] Total Loss: 1.4538, Segmentation Loss: 0.9263, Classification Loss: 0.5275
+[0/9][56/122] Total Loss: 1.3848, Segmentation Loss: 0.9286, Classification Loss: 0.4561
+[0/9][57/122] Total Loss: 1.7683, Segmentation Loss: 0.9551, Classification Loss: 0.8133
+[0/9][58/122] Total Loss: 1.4555, Segmentation Loss: 0.9280, Classification Loss: 0.5275
+[0/9][59/122] Total Loss: 1.5434, Segmentation Loss: 0.9445, Classification Loss: 0.5990
+[0/9][60/122] Total Loss: 1.7644, Segmentation Loss: 0.9512, Classification Loss: 0.8133
+[0/9][61/122] Total Loss: 1.7479, Segmentation Loss: 0.9347, Classification Loss: 0.8133
+[0/9][62/122] Total Loss: 1.6608, Segmentation Loss: 0.9190, Classification Loss: 0.7418
+[0/9][63/122] Total Loss: 1.5262, Segmentation Loss: 0.9272, Classification Loss: 0.5990
+[0/9][64/122] Total Loss: 1.3868, Segmentation Loss: 0.9306, Classification Loss: 0.4561
+[0/9][65/122] Total Loss: 1.2452, Segmentation Loss: 0.9320, Classification Loss: 0.3133
+[0/9][66/122] Total Loss: 1.3855, Segmentation Loss: 0.9294, Classification Loss: 0.4561
+[0/9][67/122] Total Loss: 1.3712, Segmentation Loss: 0.9151, Classification Loss: 0.4561
+[0/9][68/122] Total Loss: 1.2981, Segmentation Loss: 0.9134, Classification Loss: 0.3847
+[0/9][69/122] Total Loss: 1.9542, Segmentation Loss: 0.9267, Classification Loss: 1.0275
+[0/9][70/122] Total Loss: 1.4444, Segmentation Loss: 0.9168, Classification Loss: 0.5275
+[0/9][71/122] Total Loss: 1.8092, Segmentation Loss: 0.9245, Classification Loss: 0.8847
+[0/9][72/122] Total Loss: 1.5503, Segmentation Loss: 0.9513, Classification Loss: 0.5990
+[0/9][73/122] Total Loss: 1.6600, Segmentation Loss: 0.9181, Classification Loss: 0.7418
+[0/9][74/122] Total Loss: 1.5527, Segmentation Loss: 0.9538, Classification Loss: 0.5990
+[0/9][75/122] Total Loss: 1.8869, Segmentation Loss: 0.9307, Classification Loss: 0.9561
+[0/9][76/122] Total Loss: 1.3684, Segmentation Loss: 0.9122, Classification Loss: 0.4561
+[0/9][77/122] Total Loss: 1.5078, Segmentation Loss: 0.9088, Classification Loss: 0.5990
+[0/9][78/122] Total Loss: 1.5994, Segmentation Loss: 0.9290, Classification Loss: 0.6704
+[0/9][79/122] Total Loss: 1.4729, Segmentation Loss: 0.9454, Classification Loss: 0.5275
+[0/9][80/122] Total Loss: 1.5947, Segmentation Loss: 0.9243, Classification Loss: 0.6704
+[0/9][81/122] Total Loss: 1.4472, Segmentation Loss: 0.9196, Classification Loss: 0.5275
+[0/9][82/122] Total Loss: 1.4735, Segmentation Loss: 0.9459, Classification Loss: 0.5275
+[0/9][83/122] Total Loss: 1.5171, Segmentation Loss: 0.9181, Classification Loss: 0.5990
+[0/9][84/122] Total Loss: 1.5028, Segmentation Loss: 0.9038, Classification Loss: 0.5990
+[0/9][85/122] Total Loss: 1.7559, Segmentation Loss: 0.9427, Classification Loss: 0.8133
+[0/9][86/122] Total Loss: 1.7385, Segmentation Loss: 0.9253, Classification Loss: 0.8133
+[0/9][87/122] Total Loss: 1.8770, Segmentation Loss: 0.9209, Classification Loss: 0.9561
+[0/9][88/122] Total Loss: 1.9698, Segmentation Loss: 0.9423, Classification Loss: 1.0275
+[0/9][89/122] Total Loss: 1.4322, Segmentation Loss: 0.9047, Classification Loss: 0.5275
+[0/9][90/122] Total Loss: 1.8026, Segmentation Loss: 0.9179, Classification Loss: 0.8847
+[0/9][91/122] Total Loss: 1.3727, Segmentation Loss: 0.9166, Classification Loss: 0.4561
+[0/9][92/122] Total Loss: 1.6000, Segmentation Loss: 0.9296, Classification Loss: 0.6704
+[0/9][93/122] Total Loss: 1.7207, Segmentation Loss: 0.9075, Classification Loss: 0.8133
+[0/9][94/122] Total Loss: 1.5753, Segmentation Loss: 0.9049, Classification Loss: 0.6704
+[0/9][95/122] Total Loss: 1.4336, Segmentation Loss: 0.9061, Classification Loss: 0.5275
+[0/9][96/122] Total Loss: 1.3753, Segmentation Loss: 0.9191, Classification Loss: 0.4561
+[0/9][97/122] Total Loss: 1.7982, Segmentation Loss: 0.9135, Classification Loss: 0.8847
+[0/9][98/122] Total Loss: 1.9676, Segmentation Loss: 0.9401, Classification Loss: 1.0275
+[0/9][99/122] Total Loss: 1.4992, Segmentation Loss: 0.9002, Classification Loss: 0.5990
+[0/9][100/122] Total Loss: 1.4238, Segmentation Loss: 0.8963, Classification Loss: 0.5275
+[0/9][101/122] Total Loss: 1.6404, Segmentation Loss: 0.8986, Classification Loss: 0.7418
+[0/9][102/122] Total Loss: 1.7555, Segmentation Loss: 0.9422, Classification Loss: 0.8133
+[0/9][103/122] Total Loss: 1.3545, Segmentation Loss: 0.8983, Classification Loss: 0.4561
+[0/9][104/122] Total Loss: 1.2761, Segmentation Loss: 0.8914, Classification Loss: 0.3847
+[0/9][105/122] Total Loss: 1.7072, Segmentation Loss: 0.8940, Classification Loss: 0.8133
+[0/9][106/122] Total Loss: 1.4337, Segmentation Loss: 0.9061, Classification Loss: 0.5275
+[0/9][107/122] Total Loss: 1.4285, Segmentation Loss: 0.9009, Classification Loss: 0.5275
+[0/9][108/122] Total Loss: 1.6423, Segmentation Loss: 0.9004, Classification Loss: 0.7418
+[0/9][109/122] Total Loss: 1.4958, Segmentation Loss: 0.8968, Classification Loss: 0.5990
+[0/9][110/122] Total Loss: 1.3413, Segmentation Loss: 0.8852, Classification Loss: 0.4561
+[0/9][111/122] Total Loss: 1.2732, Segmentation Loss: 0.8886, Classification Loss: 0.3847
+[0/9][112/122] Total Loss: 1.4020, Segmentation Loss: 0.8745, Classification Loss: 0.5275
+[0/9][113/122] Total Loss: 1.2565, Segmentation Loss: 0.8718, Classification Loss: 0.3847
+[0/9][114/122] Total Loss: 1.4129, Segmentation Loss: 0.8854, Classification Loss: 0.5275
+[0/9][115/122] Total Loss: 1.3556, Segmentation Loss: 0.8995, Classification Loss: 0.4561
+[0/9][116/122] Total Loss: 1.3353, Segmentation Loss: 0.8792, Classification Loss: 0.4561
+[0/9][117/122] Total Loss: 1.6348, Segmentation Loss: 0.8930, Classification Loss: 0.7418
+[0/9][118/122] Total Loss: 1.6377, Segmentation Loss: 0.8958, Classification Loss: 0.7418
+[0/9][119/122] Total Loss: 1.3488, Segmentation Loss: 0.8927, Classification Loss: 0.4561
+[0/9][120/122] Total Loss: 1.5528, Segmentation Loss: 0.8824, Classification Loss: 0.6704
+[0/9][121/122] Total Loss: 1.4089, Segmentation Loss: 0.8814, Classification Loss: 0.5275
+[0/9][122/122] Total Loss: 1.3257, Segmentation Loss: 0.8696, Classification Loss: 0.4561
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[0/9][0/30] Total Loss: 1.5212, Segmentation Loss: 0.9223, Classification Loss: 0.5990
+[0/9][1/30] Total Loss: 1.8772, Segmentation Loss: 0.9211, Classification Loss: 0.9561
+[0/9][2/30] Total Loss: 1.7800, Segmentation Loss: 0.8953, Classification Loss: 0.8847
+[0/9][3/30] Total Loss: 1.7317, Segmentation Loss: 0.9184, Classification Loss: 0.8133
+[0/9][4/30] Total Loss: 1.5959, Segmentation Loss: 0.9254, Classification Loss: 0.6704
+[0/9][5/30] Total Loss: 1.7999, Segmentation Loss: 0.9152, Classification Loss: 0.8847
+[0/9][6/30] Total Loss: 2.1602, Segmentation Loss: 0.9184, Classification Loss: 1.2418
+[0/9][7/30] Total Loss: 1.7997, Segmentation Loss: 0.9151, Classification Loss: 0.8847
+[0/9][8/30] Total Loss: 1.7113, Segmentation Loss: 0.8981, Classification Loss: 0.8133
+[0/9][9/30] Total Loss: 1.6528, Segmentation Loss: 0.9110, Classification Loss: 0.7418
+[0/9][10/30] Total Loss: 1.8882, Segmentation Loss: 0.9321, Classification Loss: 0.9561
+[0/9][11/30] Total Loss: 1.6594, Segmentation Loss: 0.9175, Classification Loss: 0.7418
+[0/9][12/30] Total Loss: 1.7943, Segmentation Loss: 0.9096, Classification Loss: 0.8847
+[0/9][13/30] Total Loss: 1.8534, Segmentation Loss: 0.8973, Classification Loss: 0.9561
+[0/9][14/30] Total Loss: 1.7224, Segmentation Loss: 0.9091, Classification Loss: 0.8133
+[0/9][15/30] Total Loss: 1.8837, Segmentation Loss: 0.9275, Classification Loss: 0.9561
+[0/9][16/30] Total Loss: 1.9455, Segmentation Loss: 0.9179, Classification Loss: 1.0275
+[0/9][17/30] Total Loss: 1.8702, Segmentation Loss: 0.9140, Classification Loss: 0.9561
+[0/9][18/30] Total Loss: 2.0896, Segmentation Loss: 0.9192, Classification Loss: 1.1704
+[0/9][19/30] Total Loss: 1.5146, Segmentation Loss: 0.9156, Classification Loss: 0.5990
+[0/9][20/30] Total Loss: 1.7268, Segmentation Loss: 0.9135, Classification Loss: 0.8133
+[0/9][21/30] Total Loss: 1.7187, Segmentation Loss: 0.9054, Classification Loss: 0.8133
+[0/9][22/30] Total Loss: 1.5173, Segmentation Loss: 0.9183, Classification Loss: 0.5990
+[0/9][23/30] Total Loss: 1.7310, Segmentation Loss: 0.9178, Classification Loss: 0.8133
+[0/9][24/30] Total Loss: 2.0125, Segmentation Loss: 0.9136, Classification Loss: 1.0990
+[0/9][25/30] Total Loss: 1.7952, Segmentation Loss: 0.9105, Classification Loss: 0.8847
+[0/9][26/30] Total Loss: 1.8214, Segmentation Loss: 0.9367, Classification Loss: 0.8847
+[0/9][27/30] Total Loss: 1.7914, Segmentation Loss: 0.9067, Classification Loss: 0.8847
+[0/9][28/30] Total Loss: 1.6622, Segmentation Loss: 0.9204, Classification Loss: 0.7418
+[0/9][29/30] Total Loss: 1.8780, Segmentation Loss: 0.9219, Classification Loss: 0.9561
+[0/9][30/30] Total Loss: 1.7893, Segmentation Loss: 0.9046, Classification Loss: 0.8847
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.06843385599172272, Class-wise IoU: tensor([0.0000, 0.0170, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.2363, 0.1244, 0.1265, 0.0749, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.7211], dtype=torch.float64)
+Mean Precision: 0.09201221126475907, Class-wise Precision: tensor([0.0000, 0.0275, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3997, 0.2129, 0.2037, 0.0986, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.8058], dtype=torch.float64)
+Mean Recall: 0.10523906609978037, Class-wise Recall: tensor([0.0000, 0.0426, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3664, 0.2305, 0.2502, 0.2370, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.8727], dtype=torch.float64)
+Mean F1: 0.09678690218689312, Class-wise F1: tensor([0.0000, 0.0335, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3823, 0.2213, 0.2246, 0.1393, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.8379], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[1/9][0/122] Total Loss: 1.2821, Segmentation Loss: 0.8974, Classification Loss: 0.3847
+[1/9][1/122] Total Loss: 1.9217, Segmentation Loss: 0.9149, Classification Loss: 1.0069
+[1/9][2/122] Total Loss: 1.6549, Segmentation Loss: 0.9617, Classification Loss: 0.6931
+[1/9][3/122] Total Loss: 1.6382, Segmentation Loss: 0.9451, Classification Loss: 0.6931
+[1/9][4/122] Total Loss: 1.6143, Segmentation Loss: 0.9212, Classification Loss: 0.6931
+[1/9][5/122] Total Loss: 1.6274, Segmentation Loss: 0.9343, Classification Loss: 0.6931
+[1/9][6/122] Total Loss: 1.6254, Segmentation Loss: 0.9322, Classification Loss: 0.6931
+[1/9][7/122] Total Loss: 1.5942, Segmentation Loss: 0.9010, Classification Loss: 0.6931
+[1/9][8/122] Total Loss: 1.6208, Segmentation Loss: 0.9277, Classification Loss: 0.6931
+[1/9][9/122] Total Loss: 1.6197, Segmentation Loss: 0.9266, Classification Loss: 0.6931
+[1/9][10/122] Total Loss: 1.6142, Segmentation Loss: 0.9210, Classification Loss: 0.6931
+[1/9][11/122] Total Loss: 1.6015, Segmentation Loss: 0.9083, Classification Loss: 0.6931
+[1/9][12/122] Total Loss: 1.6087, Segmentation Loss: 0.9155, Classification Loss: 0.6931
+[1/9][13/122] Total Loss: 1.6087, Segmentation Loss: 0.9155, Classification Loss: 0.6931
+[1/9][14/122] Total Loss: 1.6038, Segmentation Loss: 0.9107, Classification Loss: 0.6931
+[1/9][15/122] Total Loss: 1.5967, Segmentation Loss: 0.9035, Classification Loss: 0.6931
+[1/9][16/122] Total Loss: 1.5916, Segmentation Loss: 0.8985, Classification Loss: 0.6931
+[1/9][17/122] Total Loss: 1.5854, Segmentation Loss: 0.8922, Classification Loss: 0.6931
+[1/9][18/122] Total Loss: 1.5821, Segmentation Loss: 0.8889, Classification Loss: 0.6931
+[1/9][19/122] Total Loss: 1.6066, Segmentation Loss: 0.9135, Classification Loss: 0.6931
+[1/9][20/122] Total Loss: 1.5868, Segmentation Loss: 0.8937, Classification Loss: 0.6931
+[1/9][21/122] Total Loss: 1.5955, Segmentation Loss: 0.9024, Classification Loss: 0.6931
+[1/9][22/122] Total Loss: 1.5765, Segmentation Loss: 0.8834, Classification Loss: 0.6931
+[1/9][23/122] Total Loss: 1.6036, Segmentation Loss: 0.9105, Classification Loss: 0.6931
+[1/9][24/122] Total Loss: 1.6414, Segmentation Loss: 0.9482, Classification Loss: 0.6931
+[1/9][25/122] Total Loss: 1.6105, Segmentation Loss: 0.9174, Classification Loss: 0.6931
+[1/9][26/122] Total Loss: 1.5963, Segmentation Loss: 0.9031, Classification Loss: 0.6931
+[1/9][27/122] Total Loss: 1.5945, Segmentation Loss: 0.9014, Classification Loss: 0.6931
+[1/9][28/122] Total Loss: 1.5808, Segmentation Loss: 0.8876, Classification Loss: 0.6931
+[1/9][29/122] Total Loss: 1.6110, Segmentation Loss: 0.9178, Classification Loss: 0.6931
+[1/9][30/122] Total Loss: 1.5887, Segmentation Loss: 0.8955, Classification Loss: 0.6931
+[1/9][31/122] Total Loss: 1.5938, Segmentation Loss: 0.9006, Classification Loss: 0.6931
+[1/9][32/122] Total Loss: 1.5891, Segmentation Loss: 0.8960, Classification Loss: 0.6931
+[1/9][33/122] Total Loss: 1.5872, Segmentation Loss: 0.8941, Classification Loss: 0.6931
+[1/9][34/122] Total Loss: 1.5928, Segmentation Loss: 0.8997, Classification Loss: 0.6931
+[1/9][35/122] Total Loss: 1.6435, Segmentation Loss: 0.9503, Classification Loss: 0.6931
+[1/9][36/122] Total Loss: 1.6094, Segmentation Loss: 0.9163, Classification Loss: 0.6931
+[1/9][37/122] Total Loss: 1.6002, Segmentation Loss: 0.9071, Classification Loss: 0.6931
+[1/9][38/122] Total Loss: 1.6016, Segmentation Loss: 0.9084, Classification Loss: 0.6931
+[1/9][39/122] Total Loss: 1.6022, Segmentation Loss: 0.9090, Classification Loss: 0.6931
+[1/9][40/122] Total Loss: 1.5679, Segmentation Loss: 0.8748, Classification Loss: 0.6931
+[1/9][41/122] Total Loss: 1.5998, Segmentation Loss: 0.9067, Classification Loss: 0.6931
+[1/9][42/122] Total Loss: 1.6037, Segmentation Loss: 0.9106, Classification Loss: 0.6931
+[1/9][43/122] Total Loss: 1.6033, Segmentation Loss: 0.9102, Classification Loss: 0.6931
+[1/9][44/122] Total Loss: 1.6185, Segmentation Loss: 0.9254, Classification Loss: 0.6931
+[1/9][45/122] Total Loss: 1.5951, Segmentation Loss: 0.9019, Classification Loss: 0.6931
+[1/9][46/122] Total Loss: 1.5969, Segmentation Loss: 0.9037, Classification Loss: 0.6931
+[1/9][47/122] Total Loss: 1.6055, Segmentation Loss: 0.9123, Classification Loss: 0.6931
+[1/9][48/122] Total Loss: 1.5852, Segmentation Loss: 0.8920, Classification Loss: 0.6931
+[1/9][49/122] Total Loss: 1.5859, Segmentation Loss: 0.8927, Classification Loss: 0.6931
+[1/9][50/122] Total Loss: 1.5726, Segmentation Loss: 0.8795, Classification Loss: 0.6931
+[1/9][51/122] Total Loss: 1.6180, Segmentation Loss: 0.9249, Classification Loss: 0.6931
+[1/9][52/122] Total Loss: 1.5921, Segmentation Loss: 0.8990, Classification Loss: 0.6931
+[1/9][53/122] Total Loss: 1.5750, Segmentation Loss: 0.8819, Classification Loss: 0.6931
+[1/9][54/122] Total Loss: 1.5736, Segmentation Loss: 0.8804, Classification Loss: 0.6931
+[1/9][55/122] Total Loss: 1.5712, Segmentation Loss: 0.8780, Classification Loss: 0.6931
+[1/9][56/122] Total Loss: 1.5708, Segmentation Loss: 0.8777, Classification Loss: 0.6931
+[1/9][57/122] Total Loss: 1.6383, Segmentation Loss: 0.9451, Classification Loss: 0.6931
+[1/9][58/122] Total Loss: 1.5727, Segmentation Loss: 0.8796, Classification Loss: 0.6931
+[1/9][59/122] Total Loss: 1.5992, Segmentation Loss: 0.9060, Classification Loss: 0.6931
+[1/9][60/122] Total Loss: 1.6201, Segmentation Loss: 0.9269, Classification Loss: 0.6931
+[1/9][61/122] Total Loss: 1.6415, Segmentation Loss: 0.9484, Classification Loss: 0.6931
+[1/9][62/122] Total Loss: 1.6077, Segmentation Loss: 0.9145, Classification Loss: 0.6931
+[1/9][63/122] Total Loss: 1.5892, Segmentation Loss: 0.8960, Classification Loss: 0.6931
+[1/9][64/122] Total Loss: 1.5766, Segmentation Loss: 0.8834, Classification Loss: 0.6931
+[1/9][65/122] Total Loss: 1.5891, Segmentation Loss: 0.8959, Classification Loss: 0.6931
+[1/9][66/122] Total Loss: 1.5969, Segmentation Loss: 0.9037, Classification Loss: 0.6931
+[1/9][67/122] Total Loss: 1.5733, Segmentation Loss: 0.8801, Classification Loss: 0.6931
+[1/9][68/122] Total Loss: 1.5994, Segmentation Loss: 0.9063, Classification Loss: 0.6931
+[1/9][69/122] Total Loss: 1.5804, Segmentation Loss: 0.8873, Classification Loss: 0.6931
+[1/9][70/122] Total Loss: 1.5784, Segmentation Loss: 0.8852, Classification Loss: 0.6931
+[1/9][71/122] Total Loss: 1.6013, Segmentation Loss: 0.9081, Classification Loss: 0.6931
+[1/9][72/122] Total Loss: 1.5882, Segmentation Loss: 0.8951, Classification Loss: 0.6931
+[1/9][73/122] Total Loss: 1.5704, Segmentation Loss: 0.8773, Classification Loss: 0.6931
+[1/9][74/122] Total Loss: 1.5648, Segmentation Loss: 0.8716, Classification Loss: 0.6931
+[1/9][75/122] Total Loss: 1.5575, Segmentation Loss: 0.8644, Classification Loss: 0.6931
+[1/9][76/122] Total Loss: 1.5794, Segmentation Loss: 0.8863, Classification Loss: 0.6931
+[1/9][77/122] Total Loss: 1.5722, Segmentation Loss: 0.8790, Classification Loss: 0.6931
+[1/9][78/122] Total Loss: 1.5986, Segmentation Loss: 0.9054, Classification Loss: 0.6931
+[1/9][79/122] Total Loss: 1.6179, Segmentation Loss: 0.9248, Classification Loss: 0.6931
+[1/9][80/122] Total Loss: 1.5939, Segmentation Loss: 0.9008, Classification Loss: 0.6931
+[1/9][81/122] Total Loss: 1.5847, Segmentation Loss: 0.8916, Classification Loss: 0.6931
+[1/9][82/122] Total Loss: 1.5747, Segmentation Loss: 0.8815, Classification Loss: 0.6931
+[1/9][83/122] Total Loss: 1.5695, Segmentation Loss: 0.8763, Classification Loss: 0.6931
+[1/9][84/122] Total Loss: 1.5790, Segmentation Loss: 0.8859, Classification Loss: 0.6931
+[1/9][85/122] Total Loss: 1.5876, Segmentation Loss: 0.8945, Classification Loss: 0.6931
+[1/9][86/122] Total Loss: 1.5811, Segmentation Loss: 0.8880, Classification Loss: 0.6931
+[1/9][87/122] Total Loss: 1.5790, Segmentation Loss: 0.8859, Classification Loss: 0.6931
+[1/9][88/122] Total Loss: 1.5669, Segmentation Loss: 0.8738, Classification Loss: 0.6931
+[1/9][89/122] Total Loss: 1.5707, Segmentation Loss: 0.8775, Classification Loss: 0.6931
+[1/9][90/122] Total Loss: 1.5909, Segmentation Loss: 0.8977, Classification Loss: 0.6931
+[1/9][91/122] Total Loss: 1.6104, Segmentation Loss: 0.9173, Classification Loss: 0.6931
+[1/9][92/122] Total Loss: 1.5883, Segmentation Loss: 0.8951, Classification Loss: 0.6931
+[1/9][93/122] Total Loss: 1.5755, Segmentation Loss: 0.8824, Classification Loss: 0.6931
+[1/9][94/122] Total Loss: 1.5788, Segmentation Loss: 0.8856, Classification Loss: 0.6931
+[1/9][95/122] Total Loss: 1.5784, Segmentation Loss: 0.8853, Classification Loss: 0.6931
+[1/9][96/122] Total Loss: 1.5738, Segmentation Loss: 0.8806, Classification Loss: 0.6931
+[1/9][97/122] Total Loss: 1.5953, Segmentation Loss: 0.9021, Classification Loss: 0.6931
+[1/9][98/122] Total Loss: 1.5828, Segmentation Loss: 0.8897, Classification Loss: 0.6931
+[1/9][99/122] Total Loss: 1.6092, Segmentation Loss: 0.9160, Classification Loss: 0.6931
+[1/9][100/122] Total Loss: 1.5769, Segmentation Loss: 0.8837, Classification Loss: 0.6931
+[1/9][101/122] Total Loss: 1.5849, Segmentation Loss: 0.8917, Classification Loss: 0.6931
+[1/9][102/122] Total Loss: 1.5712, Segmentation Loss: 0.8780, Classification Loss: 0.6931
+[1/9][103/122] Total Loss: 1.6246, Segmentation Loss: 0.9315, Classification Loss: 0.6931
+[1/9][104/122] Total Loss: 1.5767, Segmentation Loss: 0.8836, Classification Loss: 0.6931
+[1/9][105/122] Total Loss: 1.6005, Segmentation Loss: 0.9073, Classification Loss: 0.6931
+[1/9][106/122] Total Loss: 1.5957, Segmentation Loss: 0.9025, Classification Loss: 0.6931
+[1/9][107/122] Total Loss: 1.5866, Segmentation Loss: 0.8935, Classification Loss: 0.6931
+[1/9][108/122] Total Loss: 1.5866, Segmentation Loss: 0.8934, Classification Loss: 0.6931
+[1/9][109/122] Total Loss: 1.5745, Segmentation Loss: 0.8813, Classification Loss: 0.6931
+[1/9][110/122] Total Loss: 1.5812, Segmentation Loss: 0.8880, Classification Loss: 0.6931
+[1/9][111/122] Total Loss: 1.5700, Segmentation Loss: 0.8768, Classification Loss: 0.6931
+[1/9][112/122] Total Loss: 1.5900, Segmentation Loss: 0.8969, Classification Loss: 0.6931
+[1/9][113/122] Total Loss: 1.5622, Segmentation Loss: 0.8691, Classification Loss: 0.6931
+[1/9][114/122] Total Loss: 1.5882, Segmentation Loss: 0.8950, Classification Loss: 0.6931
+[1/9][115/122] Total Loss: 1.5608, Segmentation Loss: 0.8676, Classification Loss: 0.6931
+[1/9][116/122] Total Loss: 1.6338, Segmentation Loss: 0.9407, Classification Loss: 0.6931
+[1/9][117/122] Total Loss: 1.5685, Segmentation Loss: 0.8754, Classification Loss: 0.6931
+[1/9][118/122] Total Loss: 1.5854, Segmentation Loss: 0.8923, Classification Loss: 0.6931
+[1/9][119/122] Total Loss: 1.5638, Segmentation Loss: 0.8707, Classification Loss: 0.6931
+[1/9][120/122] Total Loss: 1.5774, Segmentation Loss: 0.8843, Classification Loss: 0.6931
+[1/9][121/122] Total Loss: 1.5873, Segmentation Loss: 0.8941, Classification Loss: 0.6931
+[1/9][122/122] Total Loss: 1.5609, Segmentation Loss: 0.8678, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[1/9][0/30] Total Loss: 1.6561, Segmentation Loss: 0.9629, Classification Loss: 0.6931
+[1/9][1/30] Total Loss: 1.6327, Segmentation Loss: 0.9396, Classification Loss: 0.6931
+[1/9][2/30] Total Loss: 1.6115, Segmentation Loss: 0.9184, Classification Loss: 0.6931
+[1/9][3/30] Total Loss: 1.6047, Segmentation Loss: 0.9116, Classification Loss: 0.6931
+[1/9][4/30] Total Loss: 1.6413, Segmentation Loss: 0.9482, Classification Loss: 0.6931
+[1/9][5/30] Total Loss: 1.6347, Segmentation Loss: 0.9416, Classification Loss: 0.6931
+[1/9][6/30] Total Loss: 1.6407, Segmentation Loss: 0.9475, Classification Loss: 0.6931
+[1/9][7/30] Total Loss: 1.6105, Segmentation Loss: 0.9173, Classification Loss: 0.6931
+[1/9][8/30] Total Loss: 1.6406, Segmentation Loss: 0.9475, Classification Loss: 0.6931
+[1/9][9/30] Total Loss: 1.6152, Segmentation Loss: 0.9220, Classification Loss: 0.6931
+[1/9][10/30] Total Loss: 1.6485, Segmentation Loss: 0.9554, Classification Loss: 0.6931
+[1/9][11/30] Total Loss: 1.6454, Segmentation Loss: 0.9522, Classification Loss: 0.6931
+[1/9][12/30] Total Loss: 1.6206, Segmentation Loss: 0.9275, Classification Loss: 0.6931
+[1/9][13/30] Total Loss: 1.6211, Segmentation Loss: 0.9279, Classification Loss: 0.6931
+[1/9][14/30] Total Loss: 1.6352, Segmentation Loss: 0.9421, Classification Loss: 0.6931
+[1/9][15/30] Total Loss: 1.6388, Segmentation Loss: 0.9457, Classification Loss: 0.6931
+[1/9][16/30] Total Loss: 1.6305, Segmentation Loss: 0.9374, Classification Loss: 0.6931
+[1/9][17/30] Total Loss: 1.6357, Segmentation Loss: 0.9425, Classification Loss: 0.6931
+[1/9][18/30] Total Loss: 1.6228, Segmentation Loss: 0.9297, Classification Loss: 0.6931
+[1/9][19/30] Total Loss: 1.6327, Segmentation Loss: 0.9395, Classification Loss: 0.6931
+[1/9][20/30] Total Loss: 1.6338, Segmentation Loss: 0.9406, Classification Loss: 0.6931
+[1/9][21/30] Total Loss: 1.6360, Segmentation Loss: 0.9428, Classification Loss: 0.6931
+[1/9][22/30] Total Loss: 1.6422, Segmentation Loss: 0.9490, Classification Loss: 0.6931
+[1/9][23/30] Total Loss: 1.6213, Segmentation Loss: 0.9281, Classification Loss: 0.6931
+[1/9][24/30] Total Loss: 1.6385, Segmentation Loss: 0.9454, Classification Loss: 0.6931
+[1/9][25/30] Total Loss: 1.6440, Segmentation Loss: 0.9508, Classification Loss: 0.6931
+[1/9][26/30] Total Loss: 1.6377, Segmentation Loss: 0.9446, Classification Loss: 0.6931
+[1/9][27/30] Total Loss: 1.6146, Segmentation Loss: 0.9215, Classification Loss: 0.6931
+[1/9][28/30] Total Loss: 1.6253, Segmentation Loss: 0.9321, Classification Loss: 0.6931
+[1/9][29/30] Total Loss: 1.6319, Segmentation Loss: 0.9388, Classification Loss: 0.6931
+[1/9][30/30] Total Loss: 1.6299, Segmentation Loss: 0.9367, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.05100936126144419, Class-wise IoU: tensor([3.6123e-04, 2.5080e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 3.5236e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.8136e-01, 7.5321e-03,
+        1.0224e-01, 9.6534e-02, 0.0000e+00, 4.1647e-02, 0.0000e+00, 0.0000e+00,
+        5.1090e-01], dtype=torch.float64)
+Mean Precision: 0.10853947121155812, Class-wise Precision: tensor([0.0050, 0.0290, 0.0000, 0.0000, 0.0000, 0.0037, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3759, 0.3079, 0.2133, 0.1045, 0.0000, 0.0609, 0.0000, 0.0000,
+        0.9619], dtype=torch.float64)
+Mean Recall: 0.09703465633676843, Class-wise Recall: tensor([3.8896e-04, 1.5684e-01, 0.0000e+00, 0.0000e+00, 0.0000e+00, 5.8361e-02,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 2.5948e-01, 7.6618e-03,
+        1.6410e-01, 5.5884e-01, 0.0000e+00, 1.1654e-01, 0.0000e+00, 0.0000e+00,
+        5.2144e-01], dtype=torch.float64)
+Mean F1: 0.07876299641561171, Class-wise F1: tensor([0.0007, 0.0489, 0.0000, 0.0000, 0.0000, 0.0070, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3070, 0.0150, 0.1855, 0.1761, 0.0000, 0.0800, 0.0000, 0.0000,
+        0.6763], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[2/9][0/122] Total Loss: 1.5971, Segmentation Loss: 0.9040, Classification Loss: 0.6931
+[2/9][1/122] Total Loss: 1.5716, Segmentation Loss: 0.8784, Classification Loss: 0.6931
+[2/9][2/122] Total Loss: 1.5752, Segmentation Loss: 0.8821, Classification Loss: 0.6931
+[2/9][3/122] Total Loss: 1.5759, Segmentation Loss: 0.8828, Classification Loss: 0.6931
+[2/9][4/122] Total Loss: 1.5667, Segmentation Loss: 0.8736, Classification Loss: 0.6931
+[2/9][5/122] Total Loss: 1.5966, Segmentation Loss: 0.9034, Classification Loss: 0.6931
+[2/9][6/122] Total Loss: 1.5947, Segmentation Loss: 0.9015, Classification Loss: 0.6931
+[2/9][7/122] Total Loss: 1.5589, Segmentation Loss: 0.8657, Classification Loss: 0.6931
+[2/9][8/122] Total Loss: 1.5924, Segmentation Loss: 0.8993, Classification Loss: 0.6931
+[2/9][9/122] Total Loss: 1.5978, Segmentation Loss: 0.9046, Classification Loss: 0.6931
+[2/9][10/122] Total Loss: 1.5975, Segmentation Loss: 0.9044, Classification Loss: 0.6931
+[2/9][11/122] Total Loss: 1.5818, Segmentation Loss: 0.8887, Classification Loss: 0.6931
+[2/9][12/122] Total Loss: 1.5832, Segmentation Loss: 0.8901, Classification Loss: 0.6931
+[2/9][13/122] Total Loss: 1.5914, Segmentation Loss: 0.8982, Classification Loss: 0.6931
+[2/9][14/122] Total Loss: 1.6205, Segmentation Loss: 0.9274, Classification Loss: 0.6931
+[2/9][15/122] Total Loss: 1.5758, Segmentation Loss: 0.8826, Classification Loss: 0.6931
+[2/9][16/122] Total Loss: 1.5823, Segmentation Loss: 0.8891, Classification Loss: 0.6931
+[2/9][17/122] Total Loss: 1.5645, Segmentation Loss: 0.8714, Classification Loss: 0.6931
+[2/9][18/122] Total Loss: 1.5775, Segmentation Loss: 0.8844, Classification Loss: 0.6931
+[2/9][19/122] Total Loss: 1.6235, Segmentation Loss: 0.9303, Classification Loss: 0.6931
+[2/9][20/122] Total Loss: 1.5586, Segmentation Loss: 0.8655, Classification Loss: 0.6931
+[2/9][21/122] Total Loss: 1.5612, Segmentation Loss: 0.8681, Classification Loss: 0.6931
+[2/9][22/122] Total Loss: 1.5683, Segmentation Loss: 0.8752, Classification Loss: 0.6931
+[2/9][23/122] Total Loss: 1.5650, Segmentation Loss: 0.8718, Classification Loss: 0.6931
+[2/9][24/122] Total Loss: 1.5701, Segmentation Loss: 0.8769, Classification Loss: 0.6931
+[2/9][25/122] Total Loss: 1.5594, Segmentation Loss: 0.8663, Classification Loss: 0.6931
+[2/9][26/122] Total Loss: 1.5594, Segmentation Loss: 0.8663, Classification Loss: 0.6931
+[2/9][27/122] Total Loss: 1.5876, Segmentation Loss: 0.8944, Classification Loss: 0.6931
+[2/9][28/122] Total Loss: 1.5774, Segmentation Loss: 0.8843, Classification Loss: 0.6931
+[2/9][29/122] Total Loss: 1.5554, Segmentation Loss: 0.8623, Classification Loss: 0.6931
+[2/9][30/122] Total Loss: 1.5721, Segmentation Loss: 0.8789, Classification Loss: 0.6931
+[2/9][31/122] Total Loss: 1.5583, Segmentation Loss: 0.8651, Classification Loss: 0.6931
+[2/9][32/122] Total Loss: 1.5848, Segmentation Loss: 0.8916, Classification Loss: 0.6931
+[2/9][33/122] Total Loss: 1.6061, Segmentation Loss: 0.9130, Classification Loss: 0.6931
+[2/9][34/122] Total Loss: 1.5938, Segmentation Loss: 0.9007, Classification Loss: 0.6931
+[2/9][35/122] Total Loss: 1.5692, Segmentation Loss: 0.8761, Classification Loss: 0.6931
+[2/9][36/122] Total Loss: 1.5650, Segmentation Loss: 0.8719, Classification Loss: 0.6931
+[2/9][37/122] Total Loss: 1.5864, Segmentation Loss: 0.8932, Classification Loss: 0.6931
+[2/9][38/122] Total Loss: 1.5576, Segmentation Loss: 0.8645, Classification Loss: 0.6931
+[2/9][39/122] Total Loss: 1.5586, Segmentation Loss: 0.8654, Classification Loss: 0.6931
+[2/9][40/122] Total Loss: 1.5443, Segmentation Loss: 0.8511, Classification Loss: 0.6931
+[2/9][41/122] Total Loss: 1.5419, Segmentation Loss: 0.8488, Classification Loss: 0.6931
+[2/9][42/122] Total Loss: 1.5719, Segmentation Loss: 0.8787, Classification Loss: 0.6931
+[2/9][43/122] Total Loss: 1.5959, Segmentation Loss: 0.9028, Classification Loss: 0.6931
+[2/9][44/122] Total Loss: 1.5661, Segmentation Loss: 0.8730, Classification Loss: 0.6931
+[2/9][45/122] Total Loss: 1.5530, Segmentation Loss: 0.8598, Classification Loss: 0.6931
+[2/9][46/122] Total Loss: 1.5948, Segmentation Loss: 0.9017, Classification Loss: 0.6931
+[2/9][47/122] Total Loss: 1.6316, Segmentation Loss: 0.9385, Classification Loss: 0.6931
+[2/9][48/122] Total Loss: 1.5837, Segmentation Loss: 0.8905, Classification Loss: 0.6931
+[2/9][49/122] Total Loss: 1.5683, Segmentation Loss: 0.8752, Classification Loss: 0.6931
+[2/9][50/122] Total Loss: 1.6057, Segmentation Loss: 0.9126, Classification Loss: 0.6931
+[2/9][51/122] Total Loss: 1.5692, Segmentation Loss: 0.8761, Classification Loss: 0.6931
+[2/9][52/122] Total Loss: 1.5830, Segmentation Loss: 0.8899, Classification Loss: 0.6931
+[2/9][53/122] Total Loss: 1.5489, Segmentation Loss: 0.8557, Classification Loss: 0.6931
+[2/9][54/122] Total Loss: 1.5916, Segmentation Loss: 0.8985, Classification Loss: 0.6931
+[2/9][55/122] Total Loss: 1.5868, Segmentation Loss: 0.8937, Classification Loss: 0.6931
+[2/9][56/122] Total Loss: 1.5555, Segmentation Loss: 0.8623, Classification Loss: 0.6931
+[2/9][57/122] Total Loss: 1.5611, Segmentation Loss: 0.8679, Classification Loss: 0.6931
+[2/9][58/122] Total Loss: 1.5448, Segmentation Loss: 0.8516, Classification Loss: 0.6931
+[2/9][59/122] Total Loss: 1.5573, Segmentation Loss: 0.8642, Classification Loss: 0.6931
+[2/9][60/122] Total Loss: 1.5866, Segmentation Loss: 0.8934, Classification Loss: 0.6931
+[2/9][61/122] Total Loss: 1.5647, Segmentation Loss: 0.8715, Classification Loss: 0.6931
+[2/9][62/122] Total Loss: 1.5646, Segmentation Loss: 0.8715, Classification Loss: 0.6931
+[2/9][63/122] Total Loss: 1.5775, Segmentation Loss: 0.8843, Classification Loss: 0.6931
+[2/9][64/122] Total Loss: 1.5864, Segmentation Loss: 0.8933, Classification Loss: 0.6931
+[2/9][65/122] Total Loss: 1.6062, Segmentation Loss: 0.9130, Classification Loss: 0.6931
+[2/9][66/122] Total Loss: 1.5543, Segmentation Loss: 0.8612, Classification Loss: 0.6931
+[2/9][67/122] Total Loss: 1.5513, Segmentation Loss: 0.8581, Classification Loss: 0.6931
+[2/9][68/122] Total Loss: 1.5845, Segmentation Loss: 0.8914, Classification Loss: 0.6931
+[2/9][69/122] Total Loss: 1.5795, Segmentation Loss: 0.8863, Classification Loss: 0.6931
+[2/9][70/122] Total Loss: 1.5629, Segmentation Loss: 0.8698, Classification Loss: 0.6931
+[2/9][71/122] Total Loss: 1.5399, Segmentation Loss: 0.8468, Classification Loss: 0.6931
+[2/9][72/122] Total Loss: 1.5625, Segmentation Loss: 0.8693, Classification Loss: 0.6931
+[2/9][73/122] Total Loss: 1.5785, Segmentation Loss: 0.8853, Classification Loss: 0.6931
+[2/9][74/122] Total Loss: 1.5434, Segmentation Loss: 0.8503, Classification Loss: 0.6931
+[2/9][75/122] Total Loss: 1.5838, Segmentation Loss: 0.8907, Classification Loss: 0.6931
+[2/9][76/122] Total Loss: 1.5656, Segmentation Loss: 0.8724, Classification Loss: 0.6931
+[2/9][77/122] Total Loss: 1.5906, Segmentation Loss: 0.8974, Classification Loss: 0.6931
+[2/9][78/122] Total Loss: 1.6104, Segmentation Loss: 0.9172, Classification Loss: 0.6931
+[2/9][79/122] Total Loss: 1.5453, Segmentation Loss: 0.8522, Classification Loss: 0.6931
+[2/9][80/122] Total Loss: 1.5574, Segmentation Loss: 0.8643, Classification Loss: 0.6931
+[2/9][81/122] Total Loss: 1.5714, Segmentation Loss: 0.8783, Classification Loss: 0.6931
+[2/9][82/122] Total Loss: 1.5383, Segmentation Loss: 0.8451, Classification Loss: 0.6931
+[2/9][83/122] Total Loss: 1.6059, Segmentation Loss: 0.9128, Classification Loss: 0.6931
+[2/9][84/122] Total Loss: 1.6198, Segmentation Loss: 0.9267, Classification Loss: 0.6931
+[2/9][85/122] Total Loss: 1.5978, Segmentation Loss: 0.9046, Classification Loss: 0.6931
+[2/9][86/122] Total Loss: 1.5505, Segmentation Loss: 0.8574, Classification Loss: 0.6931
+[2/9][87/122] Total Loss: 1.5743, Segmentation Loss: 0.8811, Classification Loss: 0.6931
+[2/9][88/122] Total Loss: 1.5402, Segmentation Loss: 0.8470, Classification Loss: 0.6931
+[2/9][89/122] Total Loss: 1.5733, Segmentation Loss: 0.8802, Classification Loss: 0.6931
+[2/9][90/122] Total Loss: 1.5407, Segmentation Loss: 0.8475, Classification Loss: 0.6931
+[2/9][91/122] Total Loss: 1.5691, Segmentation Loss: 0.8760, Classification Loss: 0.6931
+[2/9][92/122] Total Loss: 1.5950, Segmentation Loss: 0.9019, Classification Loss: 0.6931
+[2/9][93/122] Total Loss: 1.5466, Segmentation Loss: 0.8535, Classification Loss: 0.6931
+[2/9][94/122] Total Loss: 1.6024, Segmentation Loss: 0.9092, Classification Loss: 0.6931
+[2/9][95/122] Total Loss: 1.5675, Segmentation Loss: 0.8744, Classification Loss: 0.6931
+[2/9][96/122] Total Loss: 1.5602, Segmentation Loss: 0.8671, Classification Loss: 0.6931
+[2/9][97/122] Total Loss: 1.5707, Segmentation Loss: 0.8776, Classification Loss: 0.6931
+[2/9][98/122] Total Loss: 1.5682, Segmentation Loss: 0.8750, Classification Loss: 0.6931
+[2/9][99/122] Total Loss: 1.5752, Segmentation Loss: 0.8821, Classification Loss: 0.6931
+[2/9][100/122] Total Loss: 1.5621, Segmentation Loss: 0.8689, Classification Loss: 0.6931
+[2/9][101/122] Total Loss: 1.5703, Segmentation Loss: 0.8771, Classification Loss: 0.6931
+[2/9][102/122] Total Loss: 1.5432, Segmentation Loss: 0.8501, Classification Loss: 0.6931
+[2/9][103/122] Total Loss: 1.5876, Segmentation Loss: 0.8944, Classification Loss: 0.6931
+[2/9][104/122] Total Loss: 1.5556, Segmentation Loss: 0.8624, Classification Loss: 0.6931
+[2/9][105/122] Total Loss: 1.5895, Segmentation Loss: 0.8964, Classification Loss: 0.6931
+[2/9][106/122] Total Loss: 1.5430, Segmentation Loss: 0.8499, Classification Loss: 0.6931
+[2/9][107/122] Total Loss: 1.5627, Segmentation Loss: 0.8695, Classification Loss: 0.6931
+[2/9][108/122] Total Loss: 1.5519, Segmentation Loss: 0.8587, Classification Loss: 0.6931
+[2/9][109/122] Total Loss: 1.5476, Segmentation Loss: 0.8544, Classification Loss: 0.6931
+[2/9][110/122] Total Loss: 1.5874, Segmentation Loss: 0.8942, Classification Loss: 0.6931
+[2/9][111/122] Total Loss: 1.5508, Segmentation Loss: 0.8577, Classification Loss: 0.6931
+[2/9][112/122] Total Loss: 1.5618, Segmentation Loss: 0.8687, Classification Loss: 0.6931
+[2/9][113/122] Total Loss: 1.5813, Segmentation Loss: 0.8882, Classification Loss: 0.6931
+[2/9][114/122] Total Loss: 1.5684, Segmentation Loss: 0.8753, Classification Loss: 0.6931
+[2/9][115/122] Total Loss: 1.5594, Segmentation Loss: 0.8662, Classification Loss: 0.6931
+[2/9][116/122] Total Loss: 1.5678, Segmentation Loss: 0.8747, Classification Loss: 0.6931
+[2/9][117/122] Total Loss: 1.5607, Segmentation Loss: 0.8675, Classification Loss: 0.6931
+[2/9][118/122] Total Loss: 1.5859, Segmentation Loss: 0.8927, Classification Loss: 0.6931
+[2/9][119/122] Total Loss: 1.5672, Segmentation Loss: 0.8741, Classification Loss: 0.6931
+[2/9][120/122] Total Loss: 1.5821, Segmentation Loss: 0.8889, Classification Loss: 0.6931
+[2/9][121/122] Total Loss: 1.5544, Segmentation Loss: 0.8612, Classification Loss: 0.6931
+[2/9][122/122] Total Loss: 1.5996, Segmentation Loss: 0.9065, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[2/9][0/30] Total Loss: 1.6467, Segmentation Loss: 0.9536, Classification Loss: 0.6931
+[2/9][1/30] Total Loss: 1.5963, Segmentation Loss: 0.9031, Classification Loss: 0.6931
+[2/9][2/30] Total Loss: 1.6296, Segmentation Loss: 0.9365, Classification Loss: 0.6931
+[2/9][3/30] Total Loss: 1.6178, Segmentation Loss: 0.9246, Classification Loss: 0.6931
+[2/9][4/30] Total Loss: 1.6264, Segmentation Loss: 0.9332, Classification Loss: 0.6931
+[2/9][5/30] Total Loss: 1.6234, Segmentation Loss: 0.9302, Classification Loss: 0.6931
+[2/9][6/30] Total Loss: 1.6264, Segmentation Loss: 0.9332, Classification Loss: 0.6931
+[2/9][7/30] Total Loss: 1.6152, Segmentation Loss: 0.9221, Classification Loss: 0.6931
+[2/9][8/30] Total Loss: 1.6246, Segmentation Loss: 0.9314, Classification Loss: 0.6931
+[2/9][9/30] Total Loss: 1.6124, Segmentation Loss: 0.9193, Classification Loss: 0.6931
+[2/9][10/30] Total Loss: 1.6182, Segmentation Loss: 0.9251, Classification Loss: 0.6931
+[2/9][11/30] Total Loss: 1.6083, Segmentation Loss: 0.9152, Classification Loss: 0.6931
+[2/9][12/30] Total Loss: 1.6317, Segmentation Loss: 0.9385, Classification Loss: 0.6931
+[2/9][13/30] Total Loss: 1.6319, Segmentation Loss: 0.9388, Classification Loss: 0.6931
+[2/9][14/30] Total Loss: 1.6015, Segmentation Loss: 0.9084, Classification Loss: 0.6931
+[2/9][15/30] Total Loss: 1.6241, Segmentation Loss: 0.9309, Classification Loss: 0.6931
+[2/9][16/30] Total Loss: 1.6094, Segmentation Loss: 0.9162, Classification Loss: 0.6931
+[2/9][17/30] Total Loss: 1.6238, Segmentation Loss: 0.9307, Classification Loss: 0.6931
+[2/9][18/30] Total Loss: 1.6430, Segmentation Loss: 0.9498, Classification Loss: 0.6931
+[2/9][19/30] Total Loss: 1.6299, Segmentation Loss: 0.9367, Classification Loss: 0.6931
+[2/9][20/30] Total Loss: 1.6251, Segmentation Loss: 0.9320, Classification Loss: 0.6931
+[2/9][21/30] Total Loss: 1.6285, Segmentation Loss: 0.9353, Classification Loss: 0.6931
+[2/9][22/30] Total Loss: 1.6285, Segmentation Loss: 0.9353, Classification Loss: 0.6931
+[2/9][23/30] Total Loss: 1.5893, Segmentation Loss: 0.8961, Classification Loss: 0.6931
+[2/9][24/30] Total Loss: 1.6275, Segmentation Loss: 0.9343, Classification Loss: 0.6931
+[2/9][25/30] Total Loss: 1.6230, Segmentation Loss: 0.9299, Classification Loss: 0.6931
+[2/9][26/30] Total Loss: 1.6183, Segmentation Loss: 0.9252, Classification Loss: 0.6931
+[2/9][27/30] Total Loss: 1.6209, Segmentation Loss: 0.9277, Classification Loss: 0.6931
+[2/9][28/30] Total Loss: 1.6077, Segmentation Loss: 0.9146, Classification Loss: 0.6931
+[2/9][29/30] Total Loss: 1.6085, Segmentation Loss: 0.9154, Classification Loss: 0.6931
+[2/9][30/30] Total Loss: 1.6258, Segmentation Loss: 0.9327, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.050860059212583485, Class-wise IoU: tensor([3.3894e-04, 2.9009e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 4.2330e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 9.4077e-02, 1.8462e-01,
+        4.7372e-02, 7.6205e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00,
+        5.3048e-01], dtype=torch.float64)
+Mean Precision: 0.09487555407093413, Class-wise Precision: tensor([0.0128, 0.0342, 0.0000, 0.0000, 0.0000, 0.0051, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.4694, 0.4259, 0.2413, 0.0821, 0.0000, 0.0000, 0.0000, 0.0000,
+        0.5319], dtype=torch.float64)
+Mean Recall: 0.11065566776783206, Class-wise Recall: tensor([3.4802e-04, 1.6128e-01, 0.0000e+00, 0.0000e+00, 0.0000e+00, 2.5360e-02,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.0527e-01, 2.4579e-01,
+        5.5665e-02, 5.1371e-01, 0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00,
+        9.9504e-01], dtype=torch.float64)
+Mean F1: 0.07760344521422939, Class-wise F1: tensor([6.7766e-04, 5.6382e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 8.4303e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.7198e-01, 3.1170e-01,
+        9.0459e-02, 1.4162e-01, 0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00,
+        6.9322e-01], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[3/9][0/122] Total Loss: 1.5607, Segmentation Loss: 0.8675, Classification Loss: 0.6931
+[3/9][1/122] Total Loss: 1.5800, Segmentation Loss: 0.8869, Classification Loss: 0.6931
+[3/9][2/122] Total Loss: 1.6033, Segmentation Loss: 0.9102, Classification Loss: 0.6931
+[3/9][3/122] Total Loss: 1.5864, Segmentation Loss: 0.8933, Classification Loss: 0.6931
+[3/9][4/122] Total Loss: 1.6091, Segmentation Loss: 0.9160, Classification Loss: 0.6931
+[3/9][5/122] Total Loss: 1.5836, Segmentation Loss: 0.8904, Classification Loss: 0.6931
+[3/9][6/122] Total Loss: 1.5662, Segmentation Loss: 0.8730, Classification Loss: 0.6931
+[3/9][7/122] Total Loss: 1.5721, Segmentation Loss: 0.8789, Classification Loss: 0.6931
+[3/9][8/122] Total Loss: 1.5782, Segmentation Loss: 0.8851, Classification Loss: 0.6931
+[3/9][9/122] Total Loss: 1.5695, Segmentation Loss: 0.8764, Classification Loss: 0.6931
+[3/9][10/122] Total Loss: 1.5484, Segmentation Loss: 0.8552, Classification Loss: 0.6931
+[3/9][11/122] Total Loss: 1.5513, Segmentation Loss: 0.8581, Classification Loss: 0.6931
+[3/9][12/122] Total Loss: 1.5492, Segmentation Loss: 0.8560, Classification Loss: 0.6931
+[3/9][13/122] Total Loss: 1.5590, Segmentation Loss: 0.8659, Classification Loss: 0.6931
+[3/9][14/122] Total Loss: 1.5766, Segmentation Loss: 0.8835, Classification Loss: 0.6931
+[3/9][15/122] Total Loss: 1.5631, Segmentation Loss: 0.8699, Classification Loss: 0.6931
+[3/9][16/122] Total Loss: 1.5603, Segmentation Loss: 0.8672, Classification Loss: 0.6931
+[3/9][17/122] Total Loss: 1.5590, Segmentation Loss: 0.8659, Classification Loss: 0.6931
+[3/9][18/122] Total Loss: 1.5336, Segmentation Loss: 0.8404, Classification Loss: 0.6931
+[3/9][19/122] Total Loss: 1.6242, Segmentation Loss: 0.9310, Classification Loss: 0.6931
+[3/9][20/122] Total Loss: 1.5427, Segmentation Loss: 0.8495, Classification Loss: 0.6931
+[3/9][21/122] Total Loss: 1.6070, Segmentation Loss: 0.9139, Classification Loss: 0.6931
+[3/9][22/122] Total Loss: 1.5396, Segmentation Loss: 0.8464, Classification Loss: 0.6931
+[3/9][23/122] Total Loss: 1.5381, Segmentation Loss: 0.8449, Classification Loss: 0.6931
+[3/9][24/122] Total Loss: 1.5905, Segmentation Loss: 0.8973, Classification Loss: 0.6931
+[3/9][25/122] Total Loss: 1.5396, Segmentation Loss: 0.8465, Classification Loss: 0.6931
+[3/9][26/122] Total Loss: 1.6068, Segmentation Loss: 0.9137, Classification Loss: 0.6931
+[3/9][27/122] Total Loss: 1.5514, Segmentation Loss: 0.8582, Classification Loss: 0.6931
+[3/9][28/122] Total Loss: 1.5442, Segmentation Loss: 0.8511, Classification Loss: 0.6931
+[3/9][29/122] Total Loss: 1.5718, Segmentation Loss: 0.8787, Classification Loss: 0.6931
+[3/9][30/122] Total Loss: 1.5511, Segmentation Loss: 0.8579, Classification Loss: 0.6931
+[3/9][31/122] Total Loss: 1.5412, Segmentation Loss: 0.8480, Classification Loss: 0.6931
+[3/9][32/122] Total Loss: 1.5614, Segmentation Loss: 0.8682, Classification Loss: 0.6931
+[3/9][33/122] Total Loss: 1.5596, Segmentation Loss: 0.8665, Classification Loss: 0.6931
+[3/9][34/122] Total Loss: 1.5960, Segmentation Loss: 0.9028, Classification Loss: 0.6931
+[3/9][35/122] Total Loss: 1.5591, Segmentation Loss: 0.8660, Classification Loss: 0.6931
+[3/9][36/122] Total Loss: 1.5643, Segmentation Loss: 0.8712, Classification Loss: 0.6931
+[3/9][37/122] Total Loss: 1.5506, Segmentation Loss: 0.8574, Classification Loss: 0.6931
+[3/9][38/122] Total Loss: 1.5724, Segmentation Loss: 0.8792, Classification Loss: 0.6931
+[3/9][39/122] Total Loss: 1.5748, Segmentation Loss: 0.8816, Classification Loss: 0.6931
+[3/9][40/122] Total Loss: 1.5506, Segmentation Loss: 0.8575, Classification Loss: 0.6931
+[3/9][41/122] Total Loss: 1.5817, Segmentation Loss: 0.8886, Classification Loss: 0.6931
+[3/9][42/122] Total Loss: 1.5696, Segmentation Loss: 0.8764, Classification Loss: 0.6931
+[3/9][43/122] Total Loss: 1.5731, Segmentation Loss: 0.8799, Classification Loss: 0.6931
+[3/9][44/122] Total Loss: 1.5712, Segmentation Loss: 0.8780, Classification Loss: 0.6931
+[3/9][45/122] Total Loss: 1.5965, Segmentation Loss: 0.9034, Classification Loss: 0.6931
+[3/9][46/122] Total Loss: 1.5928, Segmentation Loss: 0.8997, Classification Loss: 0.6931
+[3/9][47/122] Total Loss: 1.5659, Segmentation Loss: 0.8728, Classification Loss: 0.6931
+[3/9][48/122] Total Loss: 1.5696, Segmentation Loss: 0.8764, Classification Loss: 0.6931
+[3/9][49/122] Total Loss: 1.5504, Segmentation Loss: 0.8573, Classification Loss: 0.6931
+[3/9][50/122] Total Loss: 1.5522, Segmentation Loss: 0.8590, Classification Loss: 0.6931
+[3/9][51/122] Total Loss: 1.5806, Segmentation Loss: 0.8875, Classification Loss: 0.6931
+[3/9][52/122] Total Loss: 1.5938, Segmentation Loss: 0.9007, Classification Loss: 0.6931
+[3/9][53/122] Total Loss: 1.5337, Segmentation Loss: 0.8406, Classification Loss: 0.6931
+[3/9][54/122] Total Loss: 1.5625, Segmentation Loss: 0.8694, Classification Loss: 0.6931
+[3/9][55/122] Total Loss: 1.6121, Segmentation Loss: 0.9190, Classification Loss: 0.6931
+[3/9][56/122] Total Loss: 1.5953, Segmentation Loss: 0.9022, Classification Loss: 0.6931
+[3/9][57/122] Total Loss: 1.5721, Segmentation Loss: 0.8789, Classification Loss: 0.6931
+[3/9][58/122] Total Loss: 1.5535, Segmentation Loss: 0.8604, Classification Loss: 0.6931
+[3/9][59/122] Total Loss: 1.5719, Segmentation Loss: 0.8787, Classification Loss: 0.6931
+[3/9][60/122] Total Loss: 1.5806, Segmentation Loss: 0.8875, Classification Loss: 0.6931
+[3/9][61/122] Total Loss: 1.5587, Segmentation Loss: 0.8655, Classification Loss: 0.6931
+[3/9][62/122] Total Loss: 1.5446, Segmentation Loss: 0.8515, Classification Loss: 0.6931
+[3/9][63/122] Total Loss: 1.6376, Segmentation Loss: 0.9445, Classification Loss: 0.6931
+[3/9][64/122] Total Loss: 1.5327, Segmentation Loss: 0.8395, Classification Loss: 0.6931
+[3/9][65/122] Total Loss: 1.5507, Segmentation Loss: 0.8575, Classification Loss: 0.6931
+[3/9][66/122] Total Loss: 1.5736, Segmentation Loss: 0.8805, Classification Loss: 0.6931
+[3/9][67/122] Total Loss: 1.5546, Segmentation Loss: 0.8615, Classification Loss: 0.6931
+[3/9][68/122] Total Loss: 1.5833, Segmentation Loss: 0.8901, Classification Loss: 0.6931
+[3/9][69/122] Total Loss: 1.5571, Segmentation Loss: 0.8639, Classification Loss: 0.6931
+[3/9][70/122] Total Loss: 1.5507, Segmentation Loss: 0.8576, Classification Loss: 0.6931
+[3/9][71/122] Total Loss: 1.5632, Segmentation Loss: 0.8701, Classification Loss: 0.6931
+[3/9][72/122] Total Loss: 1.5547, Segmentation Loss: 0.8616, Classification Loss: 0.6931
+[3/9][73/122] Total Loss: 1.5540, Segmentation Loss: 0.8609, Classification Loss: 0.6931
+[3/9][74/122] Total Loss: 1.5719, Segmentation Loss: 0.8788, Classification Loss: 0.6931
+[3/9][75/122] Total Loss: 1.5437, Segmentation Loss: 0.8505, Classification Loss: 0.6931
+[3/9][76/122] Total Loss: 1.5529, Segmentation Loss: 0.8598, Classification Loss: 0.6931
+[3/9][77/122] Total Loss: 1.5634, Segmentation Loss: 0.8702, Classification Loss: 0.6931
+[3/9][78/122] Total Loss: 1.5587, Segmentation Loss: 0.8656, Classification Loss: 0.6931
+[3/9][79/122] Total Loss: 1.5781, Segmentation Loss: 0.8849, Classification Loss: 0.6931
+[3/9][80/122] Total Loss: 1.5308, Segmentation Loss: 0.8377, Classification Loss: 0.6931
+[3/9][81/122] Total Loss: 1.5501, Segmentation Loss: 0.8570, Classification Loss: 0.6931
+[3/9][82/122] Total Loss: 1.5761, Segmentation Loss: 0.8829, Classification Loss: 0.6931
+[3/9][83/122] Total Loss: 1.5478, Segmentation Loss: 0.8546, Classification Loss: 0.6931
+[3/9][84/122] Total Loss: 1.5266, Segmentation Loss: 0.8335, Classification Loss: 0.6931
+[3/9][85/122] Total Loss: 1.5371, Segmentation Loss: 0.8440, Classification Loss: 0.6931
+[3/9][86/122] Total Loss: 1.5393, Segmentation Loss: 0.8461, Classification Loss: 0.6931
+[3/9][87/122] Total Loss: 1.5574, Segmentation Loss: 0.8642, Classification Loss: 0.6931
+[3/9][88/122] Total Loss: 1.6113, Segmentation Loss: 0.9182, Classification Loss: 0.6931
+[3/9][89/122] Total Loss: 1.5964, Segmentation Loss: 0.9033, Classification Loss: 0.6931
+[3/9][90/122] Total Loss: 1.5378, Segmentation Loss: 0.8447, Classification Loss: 0.6931
+[3/9][91/122] Total Loss: 1.5336, Segmentation Loss: 0.8404, Classification Loss: 0.6931
+[3/9][92/122] Total Loss: 1.5517, Segmentation Loss: 0.8585, Classification Loss: 0.6931
+[3/9][93/122] Total Loss: 1.5734, Segmentation Loss: 0.8802, Classification Loss: 0.6931
+[3/9][94/122] Total Loss: 1.5354, Segmentation Loss: 0.8422, Classification Loss: 0.6931
+[3/9][95/122] Total Loss: 1.5403, Segmentation Loss: 0.8472, Classification Loss: 0.6931
+[3/9][96/122] Total Loss: 1.5412, Segmentation Loss: 0.8481, Classification Loss: 0.6931
+[3/9][97/122] Total Loss: 1.5684, Segmentation Loss: 0.8753, Classification Loss: 0.6931
+[3/9][98/122] Total Loss: 1.5471, Segmentation Loss: 0.8539, Classification Loss: 0.6931
+[3/9][99/122] Total Loss: 1.6511, Segmentation Loss: 0.9580, Classification Loss: 0.6931
+[3/9][100/122] Total Loss: 1.5373, Segmentation Loss: 0.8441, Classification Loss: 0.6931
+[3/9][101/122] Total Loss: 1.5356, Segmentation Loss: 0.8425, Classification Loss: 0.6931
+[3/9][102/122] Total Loss: 1.5717, Segmentation Loss: 0.8785, Classification Loss: 0.6931
+[3/9][103/122] Total Loss: 1.5494, Segmentation Loss: 0.8563, Classification Loss: 0.6931
+[3/9][104/122] Total Loss: 1.5613, Segmentation Loss: 0.8681, Classification Loss: 0.6931
+[3/9][105/122] Total Loss: 1.5339, Segmentation Loss: 0.8407, Classification Loss: 0.6931
+[3/9][106/122] Total Loss: 1.5737, Segmentation Loss: 0.8805, Classification Loss: 0.6931
+[3/9][107/122] Total Loss: 1.5717, Segmentation Loss: 0.8786, Classification Loss: 0.6931
+[3/9][108/122] Total Loss: 1.5872, Segmentation Loss: 0.8940, Classification Loss: 0.6931
+[3/9][109/122] Total Loss: 1.5610, Segmentation Loss: 0.8678, Classification Loss: 0.6931
+[3/9][110/122] Total Loss: 1.5775, Segmentation Loss: 0.8844, Classification Loss: 0.6931
+[3/9][111/122] Total Loss: 1.5395, Segmentation Loss: 0.8463, Classification Loss: 0.6931
+[3/9][112/122] Total Loss: 1.5823, Segmentation Loss: 0.8891, Classification Loss: 0.6931
+[3/9][113/122] Total Loss: 1.5416, Segmentation Loss: 0.8484, Classification Loss: 0.6931
+[3/9][114/122] Total Loss: 1.5868, Segmentation Loss: 0.8937, Classification Loss: 0.6931
+[3/9][115/122] Total Loss: 1.5506, Segmentation Loss: 0.8574, Classification Loss: 0.6931
+[3/9][116/122] Total Loss: 1.5909, Segmentation Loss: 0.8977, Classification Loss: 0.6931
+[3/9][117/122] Total Loss: 1.5331, Segmentation Loss: 0.8400, Classification Loss: 0.6931
+[3/9][118/122] Total Loss: 1.5722, Segmentation Loss: 0.8791, Classification Loss: 0.6931
+[3/9][119/122] Total Loss: 1.5702, Segmentation Loss: 0.8771, Classification Loss: 0.6931
+[3/9][120/122] Total Loss: 1.5755, Segmentation Loss: 0.8823, Classification Loss: 0.6931
+[3/9][121/122] Total Loss: 1.5816, Segmentation Loss: 0.8884, Classification Loss: 0.6931
+[3/9][122/122] Total Loss: 1.5423, Segmentation Loss: 0.8491, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[3/9][0/30] Total Loss: 1.5883, Segmentation Loss: 0.8952, Classification Loss: 0.6931
+[3/9][1/30] Total Loss: 1.5829, Segmentation Loss: 0.8897, Classification Loss: 0.6931
+[3/9][2/30] Total Loss: 1.5890, Segmentation Loss: 0.8959, Classification Loss: 0.6931
+[3/9][3/30] Total Loss: 1.6136, Segmentation Loss: 0.9204, Classification Loss: 0.6931
+[3/9][4/30] Total Loss: 1.5832, Segmentation Loss: 0.8900, Classification Loss: 0.6931
+[3/9][5/30] Total Loss: 1.5976, Segmentation Loss: 0.9044, Classification Loss: 0.6931
+[3/9][6/30] Total Loss: 1.5992, Segmentation Loss: 0.9060, Classification Loss: 0.6931
+[3/9][7/30] Total Loss: 1.6193, Segmentation Loss: 0.9261, Classification Loss: 0.6931
+[3/9][8/30] Total Loss: 1.5873, Segmentation Loss: 0.8941, Classification Loss: 0.6931
+[3/9][9/30] Total Loss: 1.5899, Segmentation Loss: 0.8967, Classification Loss: 0.6931
+[3/9][10/30] Total Loss: 1.6003, Segmentation Loss: 0.9072, Classification Loss: 0.6931
+[3/9][11/30] Total Loss: 1.5685, Segmentation Loss: 0.8754, Classification Loss: 0.6931
+[3/9][12/30] Total Loss: 1.5908, Segmentation Loss: 0.8976, Classification Loss: 0.6931
+[3/9][13/30] Total Loss: 1.5649, Segmentation Loss: 0.8717, Classification Loss: 0.6931
+[3/9][14/30] Total Loss: 1.5769, Segmentation Loss: 0.8837, Classification Loss: 0.6931
+[3/9][15/30] Total Loss: 1.6078, Segmentation Loss: 0.9147, Classification Loss: 0.6931
+[3/9][16/30] Total Loss: 1.5928, Segmentation Loss: 0.8997, Classification Loss: 0.6931
+[3/9][17/30] Total Loss: 1.5820, Segmentation Loss: 0.8889, Classification Loss: 0.6931
+[3/9][18/30] Total Loss: 1.5981, Segmentation Loss: 0.9050, Classification Loss: 0.6931
+[3/9][19/30] Total Loss: 1.6048, Segmentation Loss: 0.9116, Classification Loss: 0.6931
+[3/9][20/30] Total Loss: 1.5822, Segmentation Loss: 0.8890, Classification Loss: 0.6931
+[3/9][21/30] Total Loss: 1.6175, Segmentation Loss: 0.9243, Classification Loss: 0.6931
+[3/9][22/30] Total Loss: 1.6056, Segmentation Loss: 0.9125, Classification Loss: 0.6931
+[3/9][23/30] Total Loss: 1.5837, Segmentation Loss: 0.8905, Classification Loss: 0.6931
+[3/9][24/30] Total Loss: 1.5712, Segmentation Loss: 0.8780, Classification Loss: 0.6931
+[3/9][25/30] Total Loss: 1.5714, Segmentation Loss: 0.8782, Classification Loss: 0.6931
+[3/9][26/30] Total Loss: 1.5876, Segmentation Loss: 0.8945, Classification Loss: 0.6931
+[3/9][27/30] Total Loss: 1.5874, Segmentation Loss: 0.8943, Classification Loss: 0.6931
+[3/9][28/30] Total Loss: 1.5851, Segmentation Loss: 0.8920, Classification Loss: 0.6931
+[3/9][29/30] Total Loss: 1.5820, Segmentation Loss: 0.8888, Classification Loss: 0.6931
+[3/9][30/30] Total Loss: 1.5758, Segmentation Loss: 0.8826, Classification Loss: 0.6931
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.0790764530389706, Class-wise IoU: tensor([3.7951e-04, 1.2816e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.0612e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 3.1985e-01, 2.8671e-01,
+        9.4691e-02, 9.3157e-02, 1.0312e-03, 8.0513e-05, 0.0000e+00, 0.0000e+00,
+        6.9267e-01], dtype=torch.float64)
+Mean Precision: 0.10367139433568552, Class-wise Precision: tensor([0.0154, 0.0273, 0.0000, 0.0000, 0.0000, 0.0021, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.4720, 0.3834, 0.1864, 0.1582, 0.0071, 0.0182, 0.0000, 0.0000,
+        0.6997], dtype=torch.float64)
+Mean Recall: 0.12575141558877428, Class-wise Recall: tensor([3.8896e-04, 2.3595e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 2.1041e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 4.9807e-01, 5.3195e-01,
+        1.6142e-01, 1.8472e-01, 1.2057e-03, 8.0864e-05, 0.0000e+00, 0.0000e+00,
+        9.8574e-01], dtype=torch.float64)
+Mean F1: 0.11171640654559861, Class-wise F1: tensor([7.5874e-04, 2.5308e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 2.1202e-03,
+        0.0000e+00, 0.0000e+00, 0.0000e+00, 0.0000e+00, 4.8468e-01, 4.4565e-01,
+        1.7300e-01, 1.7044e-01, 2.0603e-03, 1.6101e-04, 0.0000e+00, 0.0000e+00,
+        8.1843e-01], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[4/9][0/122] Total Loss: 1.5824, Segmentation Loss: 0.8892, Classification Loss: 0.6931
+[4/9][1/122] Total Loss: 1.5571, Segmentation Loss: 0.8640, Classification Loss: 0.6931
+[4/9][2/122] Total Loss: 1.5689, Segmentation Loss: 0.8757, Classification Loss: 0.6931
+[4/9][3/122] Total Loss: 1.5793, Segmentation Loss: 0.8862, Classification Loss: 0.6931
+[4/9][4/122] Total Loss: 1.5722, Segmentation Loss: 0.8791, Classification Loss: 0.6931
+[4/9][5/122] Total Loss: 1.5425, Segmentation Loss: 0.8493, Classification Loss: 0.6931
+[4/9][6/122] Total Loss: 1.5637, Segmentation Loss: 0.8706, Classification Loss: 0.6931
+[4/9][7/122] Total Loss: 1.5744, Segmentation Loss: 0.8812, Classification Loss: 0.6931
+[4/9][8/122] Total Loss: 1.5433, Segmentation Loss: 0.8502, Classification Loss: 0.6931
+[4/9][9/122] Total Loss: 1.5735, Segmentation Loss: 0.8804, Classification Loss: 0.6931
+[4/9][10/122] Total Loss: 1.5474, Segmentation Loss: 0.8542, Classification Loss: 0.6931
+[4/9][11/122] Total Loss: 1.5450, Segmentation Loss: 0.8518, Classification Loss: 0.6931
+[4/9][12/122] Total Loss: 1.5395, Segmentation Loss: 0.8464, Classification Loss: 0.6931
+[4/9][13/122] Total Loss: 1.5517, Segmentation Loss: 0.8585, Classification Loss: 0.6931
+[4/9][14/122] Total Loss: 1.5355, Segmentation Loss: 0.8424, Classification Loss: 0.6931
+[4/9][15/122] Total Loss: 1.5682, Segmentation Loss: 0.8751, Classification Loss: 0.6931
+[4/9][16/122] Total Loss: 1.5622, Segmentation Loss: 0.8691, Classification Loss: 0.6931
+[4/9][17/122] Total Loss: 1.5290, Segmentation Loss: 0.8359, Classification Loss: 0.6931
+[4/9][18/122] Total Loss: 1.5327, Segmentation Loss: 0.8395, Classification Loss: 0.6931
+[4/9][19/122] Total Loss: 1.5290, Segmentation Loss: 0.8359, Classification Loss: 0.6931
+[4/9][20/122] Total Loss: 1.5441, Segmentation Loss: 0.8509, Classification Loss: 0.6931
+[4/9][21/122] Total Loss: 1.5697, Segmentation Loss: 0.8765, Classification Loss: 0.6931
+[4/9][22/122] Total Loss: 1.5445, Segmentation Loss: 0.8513, Classification Loss: 0.6931
+[4/9][23/122] Total Loss: 1.6258, Segmentation Loss: 0.9327, Classification Loss: 0.6931
+[4/9][24/122] Total Loss: 1.5419, Segmentation Loss: 0.8488, Classification Loss: 0.6931
+[4/9][25/122] Total Loss: 1.5600, Segmentation Loss: 0.8669, Classification Loss: 0.6931
+[4/9][26/122] Total Loss: 1.5822, Segmentation Loss: 0.8891, Classification Loss: 0.6931
+[4/9][27/122] Total Loss: 1.5602, Segmentation Loss: 0.8671, Classification Loss: 0.6931
+[4/9][28/122] Total Loss: 1.5348, Segmentation Loss: 0.8416, Classification Loss: 0.6931
+[4/9][29/122] Total Loss: 1.5625, Segmentation Loss: 0.8694, Classification Loss: 0.6931
+[4/9][30/122] Total Loss: 1.5883, Segmentation Loss: 0.8952, Classification Loss: 0.6931
+[4/9][31/122] Total Loss: 1.5588, Segmentation Loss: 0.8657, Classification Loss: 0.6931
+[4/9][32/122] Total Loss: 1.5382, Segmentation Loss: 0.8451, Classification Loss: 0.6931
+[4/9][33/122] Total Loss: 1.5245, Segmentation Loss: 0.8314, Classification Loss: 0.6931
+[4/9][34/122] Total Loss: 1.5378, Segmentation Loss: 0.8447, Classification Loss: 0.6931
+[4/9][35/122] Total Loss: 1.5271, Segmentation Loss: 0.8340, Classification Loss: 0.6931
+[4/9][36/122] Total Loss: 1.5341, Segmentation Loss: 0.8410, Classification Loss: 0.6931
+[4/9][37/122] Total Loss: 1.5279, Segmentation Loss: 0.8347, Classification Loss: 0.6931
+[4/9][38/122] Total Loss: 1.5263, Segmentation Loss: 0.8331, Classification Loss: 0.6931
+[4/9][39/122] Total Loss: 1.5310, Segmentation Loss: 0.8378, Classification Loss: 0.6931
+[4/9][40/122] Total Loss: 1.5615, Segmentation Loss: 0.8684, Classification Loss: 0.6931
+[4/9][41/122] Total Loss: 1.5465, Segmentation Loss: 0.8533, Classification Loss: 0.6931
+[4/9][42/122] Total Loss: 1.5265, Segmentation Loss: 0.8334, Classification Loss: 0.6931
+[4/9][43/122] Total Loss: 1.5327, Segmentation Loss: 0.8395, Classification Loss: 0.6931
+[4/9][44/122] Total Loss: 1.5684, Segmentation Loss: 0.8752, Classification Loss: 0.6931
+[4/9][45/122] Total Loss: 1.5450, Segmentation Loss: 0.8518, Classification Loss: 0.6931
+[4/9][46/122] Total Loss: 1.6286, Segmentation Loss: 0.9355, Classification Loss: 0.6931
+[4/9][47/122] Total Loss: 1.5387, Segmentation Loss: 0.8455, Classification Loss: 0.6931
+[4/9][48/122] Total Loss: 1.5854, Segmentation Loss: 0.8923, Classification Loss: 0.6931
+[4/9][49/122] Total Loss: 1.5727, Segmentation Loss: 0.8796, Classification Loss: 0.6931
+[4/9][50/122] Total Loss: 1.5729, Segmentation Loss: 0.8798, Classification Loss: 0.6931
+[4/9][51/122] Total Loss: 1.5383, Segmentation Loss: 0.8451, Classification Loss: 0.6931
+[4/9][52/122] Total Loss: 1.5484, Segmentation Loss: 0.8553, Classification Loss: 0.6931
+[4/9][53/122] Total Loss: 1.5786, Segmentation Loss: 0.8854, Classification Loss: 0.6931
+[4/9][54/122] Total Loss: 1.5407, Segmentation Loss: 0.8476, Classification Loss: 0.6931
+[4/9][55/122] Total Loss: 1.5558, Segmentation Loss: 0.8626, Classification Loss: 0.6931
+[4/9][56/122] Total Loss: 1.5514, Segmentation Loss: 0.8582, Classification Loss: 0.6931
+[4/9][57/122] Total Loss: 1.5508, Segmentation Loss: 0.8576, Classification Loss: 0.6931
+[4/9][58/122] Total Loss: 1.5501, Segmentation Loss: 0.8570, Classification Loss: 0.6931
+[4/9][59/122] Total Loss: 1.5396, Segmentation Loss: 0.8465, Classification Loss: 0.6931
+[4/9][60/122] Total Loss: 1.5409, Segmentation Loss: 0.8477, Classification Loss: 0.6931
+[4/9][61/122] Total Loss: 1.5463, Segmentation Loss: 0.8532, Classification Loss: 0.6931
+[4/9][62/122] Total Loss: 1.5427, Segmentation Loss: 0.8496, Classification Loss: 0.6931
+[4/9][63/122] Total Loss: 1.5332, Segmentation Loss: 0.8400, Classification Loss: 0.6931
+[4/9][64/122] Total Loss: 1.5669, Segmentation Loss: 0.8738, Classification Loss: 0.6931
+[4/9][65/122] Total Loss: 1.5571, Segmentation Loss: 0.8639, Classification Loss: 0.6931
+[4/9][66/122] Total Loss: 1.5302, Segmentation Loss: 0.8371, Classification Loss: 0.6931
+[4/9][67/122] Total Loss: 1.5292, Segmentation Loss: 0.8361, Classification Loss: 0.6931
+[4/9][68/122] Total Loss: 1.5613, Segmentation Loss: 0.8681, Classification Loss: 0.6931
+[4/9][69/122] Total Loss: 1.5299, Segmentation Loss: 0.8391, Classification Loss: 0.6908
+[4/9][70/122] Total Loss: 1.5171, Segmentation Loss: 0.8782, Classification Loss: 0.6389
+[4/9][71/122] Total Loss: 1.5371, Segmentation Loss: 0.8983, Classification Loss: 0.6389
+[4/9][72/122] Total Loss: 1.5959, Segmentation Loss: 0.8856, Classification Loss: 0.7103
+[4/9][73/122] Total Loss: 1.6067, Segmentation Loss: 0.8964, Classification Loss: 0.7103
+[4/9][74/122] Total Loss: 1.5214, Segmentation Loss: 0.8825, Classification Loss: 0.6389
+[4/9][75/122] Total Loss: 1.5335, Segmentation Loss: 0.8946, Classification Loss: 0.6389
+[4/9][76/122] Total Loss: 1.5001, Segmentation Loss: 0.8612, Classification Loss: 0.6389
+[4/9][77/122] Total Loss: 1.5083, Segmentation Loss: 0.8695, Classification Loss: 0.6389
+[4/9][78/122] Total Loss: 1.4918, Segmentation Loss: 0.8529, Classification Loss: 0.6389
+[4/9][79/122] Total Loss: 1.4855, Segmentation Loss: 0.8466, Classification Loss: 0.6389
+[4/9][80/122] Total Loss: 1.5627, Segmentation Loss: 0.9238, Classification Loss: 0.6389
+[4/9][81/122] Total Loss: 1.4951, Segmentation Loss: 0.8562, Classification Loss: 0.6389
+[4/9][82/122] Total Loss: 1.4797, Segmentation Loss: 0.8408, Classification Loss: 0.6389
+[4/9][83/122] Total Loss: 1.4802, Segmentation Loss: 0.8413, Classification Loss: 0.6389
+[4/9][84/122] Total Loss: 1.4779, Segmentation Loss: 0.8391, Classification Loss: 0.6389
+[4/9][85/122] Total Loss: 1.4900, Segmentation Loss: 0.8511, Classification Loss: 0.6389
+[4/9][86/122] Total Loss: 1.5183, Segmentation Loss: 0.8794, Classification Loss: 0.6389
+[4/9][87/122] Total Loss: 1.4798, Segmentation Loss: 0.8410, Classification Loss: 0.6389
+[4/9][88/122] Total Loss: 1.4827, Segmentation Loss: 0.8438, Classification Loss: 0.6389
+[4/9][89/122] Total Loss: 1.4830, Segmentation Loss: 0.8441, Classification Loss: 0.6389
+[4/9][90/122] Total Loss: 1.5989, Segmentation Loss: 0.8886, Classification Loss: 0.7103
+[4/9][91/122] Total Loss: 1.4714, Segmentation Loss: 0.8326, Classification Loss: 0.6389
+[4/9][92/122] Total Loss: 1.4957, Segmentation Loss: 0.8569, Classification Loss: 0.6389
+[4/9][93/122] Total Loss: 1.5152, Segmentation Loss: 0.8763, Classification Loss: 0.6389
+[4/9][94/122] Total Loss: 1.5866, Segmentation Loss: 0.8763, Classification Loss: 0.7103
+[4/9][95/122] Total Loss: 1.5093, Segmentation Loss: 0.8704, Classification Loss: 0.6389
+[4/9][96/122] Total Loss: 1.5086, Segmentation Loss: 0.8698, Classification Loss: 0.6389
+[4/9][97/122] Total Loss: 1.4837, Segmentation Loss: 0.8448, Classification Loss: 0.6389
+[4/9][98/122] Total Loss: 1.4871, Segmentation Loss: 0.8482, Classification Loss: 0.6389
+[4/9][99/122] Total Loss: 1.4907, Segmentation Loss: 0.8518, Classification Loss: 0.6389
+[4/9][100/122] Total Loss: 1.5213, Segmentation Loss: 0.8825, Classification Loss: 0.6389
+[4/9][101/122] Total Loss: 1.5313, Segmentation Loss: 0.8924, Classification Loss: 0.6389
+[4/9][102/122] Total Loss: 1.4958, Segmentation Loss: 0.8569, Classification Loss: 0.6389
+[4/9][103/122] Total Loss: 1.5198, Segmentation Loss: 0.8809, Classification Loss: 0.6389
+[4/9][104/122] Total Loss: 1.6248, Segmentation Loss: 0.9144, Classification Loss: 0.7103
+[4/9][105/122] Total Loss: 1.4898, Segmentation Loss: 0.8510, Classification Loss: 0.6389
+[4/9][106/122] Total Loss: 1.5585, Segmentation Loss: 0.9196, Classification Loss: 0.6389
+[4/9][107/122] Total Loss: 1.6188, Segmentation Loss: 0.9085, Classification Loss: 0.7103
+[4/9][108/122] Total Loss: 1.4886, Segmentation Loss: 0.8497, Classification Loss: 0.6389
+[4/9][109/122] Total Loss: 1.5201, Segmentation Loss: 0.8813, Classification Loss: 0.6389
+[4/9][110/122] Total Loss: 1.6407, Segmentation Loss: 0.9303, Classification Loss: 0.7103
+[4/9][111/122] Total Loss: 1.5613, Segmentation Loss: 0.9224, Classification Loss: 0.6389
+[4/9][112/122] Total Loss: 1.6963, Segmentation Loss: 0.9145, Classification Loss: 0.7817
+[4/9][113/122] Total Loss: 1.4935, Segmentation Loss: 0.8546, Classification Loss: 0.6389
+[4/9][114/122] Total Loss: 1.4873, Segmentation Loss: 0.8484, Classification Loss: 0.6389
+[4/9][115/122] Total Loss: 1.4721, Segmentation Loss: 0.8332, Classification Loss: 0.6389
+[4/9][116/122] Total Loss: 1.4864, Segmentation Loss: 0.8475, Classification Loss: 0.6389
+[4/9][117/122] Total Loss: 1.4841, Segmentation Loss: 0.8452, Classification Loss: 0.6389
+[4/9][118/122] Total Loss: 1.5163, Segmentation Loss: 0.8775, Classification Loss: 0.6389
+[4/9][119/122] Total Loss: 1.5262, Segmentation Loss: 0.8874, Classification Loss: 0.6389
+[4/9][120/122] Total Loss: 1.5031, Segmentation Loss: 0.8642, Classification Loss: 0.6389
+[4/9][121/122] Total Loss: 1.4767, Segmentation Loss: 0.8378, Classification Loss: 0.6389
+[4/9][122/122] Total Loss: 1.5734, Segmentation Loss: 0.9345, Classification Loss: 0.6389
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[4/9][0/30] Total Loss: 1.5489, Segmentation Loss: 0.9100, Classification Loss: 0.6389
+[4/9][1/30] Total Loss: 1.6179, Segmentation Loss: 0.9076, Classification Loss: 0.7103
+[4/9][2/30] Total Loss: 1.6342, Segmentation Loss: 0.9239, Classification Loss: 0.7103
+[4/9][3/30] Total Loss: 1.6190, Segmentation Loss: 0.9087, Classification Loss: 0.7103
+[4/9][4/30] Total Loss: 1.5793, Segmentation Loss: 0.9404, Classification Loss: 0.6389
+[4/9][5/30] Total Loss: 1.5618, Segmentation Loss: 0.9230, Classification Loss: 0.6389
+[4/9][6/30] Total Loss: 1.5256, Segmentation Loss: 0.8868, Classification Loss: 0.6389
+[4/9][7/30] Total Loss: 1.5538, Segmentation Loss: 0.9149, Classification Loss: 0.6389
+[4/9][8/30] Total Loss: 1.5510, Segmentation Loss: 0.9121, Classification Loss: 0.6389
+[4/9][9/30] Total Loss: 1.6336, Segmentation Loss: 0.9233, Classification Loss: 0.7103
+[4/9][10/30] Total Loss: 1.5508, Segmentation Loss: 0.9119, Classification Loss: 0.6389
+[4/9][11/30] Total Loss: 1.6187, Segmentation Loss: 0.9084, Classification Loss: 0.7103
+[4/9][12/30] Total Loss: 1.5613, Segmentation Loss: 0.9224, Classification Loss: 0.6389
+[4/9][13/30] Total Loss: 1.5402, Segmentation Loss: 0.9013, Classification Loss: 0.6389
+[4/9][14/30] Total Loss: 1.6099, Segmentation Loss: 0.8996, Classification Loss: 0.7103
+[4/9][15/30] Total Loss: 1.6277, Segmentation Loss: 0.9174, Classification Loss: 0.7103
+[4/9][16/30] Total Loss: 1.6119, Segmentation Loss: 0.9016, Classification Loss: 0.7103
+[4/9][17/30] Total Loss: 1.5847, Segmentation Loss: 0.9459, Classification Loss: 0.6389
+[4/9][18/30] Total Loss: 1.5281, Segmentation Loss: 0.8893, Classification Loss: 0.6389
+[4/9][19/30] Total Loss: 1.5583, Segmentation Loss: 0.9194, Classification Loss: 0.6389
+[4/9][20/30] Total Loss: 1.5739, Segmentation Loss: 0.9350, Classification Loss: 0.6389
+[4/9][21/30] Total Loss: 1.7192, Segmentation Loss: 0.9375, Classification Loss: 0.7817
+[4/9][22/30] Total Loss: 1.5582, Segmentation Loss: 0.9193, Classification Loss: 0.6389
+[4/9][23/30] Total Loss: 1.6009, Segmentation Loss: 0.8906, Classification Loss: 0.7103
+[4/9][24/30] Total Loss: 1.5440, Segmentation Loss: 0.9051, Classification Loss: 0.6389
+[4/9][25/30] Total Loss: 1.7103, Segmentation Loss: 0.9286, Classification Loss: 0.7817
+[4/9][26/30] Total Loss: 1.6787, Segmentation Loss: 0.8970, Classification Loss: 0.7817
+[4/9][27/30] Total Loss: 1.5288, Segmentation Loss: 0.8899, Classification Loss: 0.6389
+[4/9][28/30] Total Loss: 1.5223, Segmentation Loss: 0.8834, Classification Loss: 0.6389
+[4/9][29/30] Total Loss: 1.5792, Segmentation Loss: 0.9403, Classification Loss: 0.6389
+[4/9][30/30] Total Loss: 1.5495, Segmentation Loss: 0.9107, Classification Loss: 0.6389
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.06386221820441276, Class-wise IoU: tensor([0.0031, 0.0202, 0.0000, 0.0000, 0.0000, 0.0010, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.2502, 0.2033, 0.0963, 0.0946, 0.0000, 0.0034, 0.0000, 0.0000,
+        0.5413], dtype=torch.float64)
+Mean Precision: 0.10808118130006256, Class-wise Precision: tensor([0.0304, 0.0299, 0.0000, 0.0000, 0.0000, 0.0028, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.4230, 0.6016, 0.2086, 0.1172, 0.0000, 0.0968, 0.0000, 0.0000,
+        0.5432], dtype=torch.float64)
+Mean Recall: 0.1134762864302283, Class-wise Recall: tensor([0.0035, 0.0585, 0.0000, 0.0000, 0.0000, 0.0014, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.3799, 0.2349, 0.1518, 0.3289, 0.0000, 0.0035, 0.0000, 0.0000,
+        0.9936], dtype=torch.float64)
+Mean F1: 0.09703158390878706, Class-wise F1: tensor([0.0062, 0.0395, 0.0000, 0.0000, 0.0000, 0.0019, 0.0000, 0.0000, 0.0000,
+        0.0000, 0.4003, 0.3379, 0.1757, 0.1729, 0.0000, 0.0068, 0.0000, 0.0000,
+        0.7024], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[5/9][0/122] Total Loss: 1.5878, Segmentation Loss: 0.8774, Classification Loss: 0.7103
+[5/9][1/122] Total Loss: 1.4743, Segmentation Loss: 0.8354, Classification Loss: 0.6389
+[5/9][2/122] Total Loss: 1.5157, Segmentation Loss: 0.8768, Classification Loss: 0.6389
+[5/9][3/122] Total Loss: 1.4837, Segmentation Loss: 0.8448, Classification Loss: 0.6389
+[5/9][4/122] Total Loss: 1.4762, Segmentation Loss: 0.8374, Classification Loss: 0.6389
+[5/9][5/122] Total Loss: 1.5366, Segmentation Loss: 0.8977, Classification Loss: 0.6389
+[5/9][6/122] Total Loss: 1.4690, Segmentation Loss: 0.8301, Classification Loss: 0.6389
+[5/9][7/122] Total Loss: 1.4966, Segmentation Loss: 0.8578, Classification Loss: 0.6389
+[5/9][8/122] Total Loss: 1.4890, Segmentation Loss: 0.8501, Classification Loss: 0.6389
+[5/9][9/122] Total Loss: 1.5022, Segmentation Loss: 0.8633, Classification Loss: 0.6389
+[5/9][10/122] Total Loss: 1.5300, Segmentation Loss: 0.8911, Classification Loss: 0.6389
+[5/9][11/122] Total Loss: 1.4727, Segmentation Loss: 0.8338, Classification Loss: 0.6389
+[5/9][12/122] Total Loss: 1.5130, Segmentation Loss: 0.8741, Classification Loss: 0.6389
+[5/9][13/122] Total Loss: 1.5231, Segmentation Loss: 0.8842, Classification Loss: 0.6389
+[5/9][14/122] Total Loss: 1.5021, Segmentation Loss: 0.8632, Classification Loss: 0.6389
+[5/9][15/122] Total Loss: 1.4753, Segmentation Loss: 0.8364, Classification Loss: 0.6389
+[5/9][16/122] Total Loss: 1.5764, Segmentation Loss: 0.8661, Classification Loss: 0.7103
+[5/9][17/122] Total Loss: 1.5096, Segmentation Loss: 0.8707, Classification Loss: 0.6389
+[5/9][18/122] Total Loss: 1.4709, Segmentation Loss: 0.8320, Classification Loss: 0.6389
+[5/9][19/122] Total Loss: 1.4762, Segmentation Loss: 0.8374, Classification Loss: 0.6389
+[5/9][20/122] Total Loss: 1.4847, Segmentation Loss: 0.8458, Classification Loss: 0.6389
+[5/9][21/122] Total Loss: 1.5875, Segmentation Loss: 0.8772, Classification Loss: 0.7103
+[5/9][22/122] Total Loss: 1.4761, Segmentation Loss: 0.8373, Classification Loss: 0.6389
+[5/9][23/122] Total Loss: 1.4862, Segmentation Loss: 0.8473, Classification Loss: 0.6389
+[5/9][24/122] Total Loss: 1.4947, Segmentation Loss: 0.8558, Classification Loss: 0.6389
+[5/9][25/122] Total Loss: 1.5368, Segmentation Loss: 0.8979, Classification Loss: 0.6389
+[5/9][26/122] Total Loss: 1.5049, Segmentation Loss: 0.8660, Classification Loss: 0.6389
+[5/9][27/122] Total Loss: 1.5030, Segmentation Loss: 0.8641, Classification Loss: 0.6389
+[5/9][28/122] Total Loss: 1.4832, Segmentation Loss: 0.8443, Classification Loss: 0.6389
+[5/9][29/122] Total Loss: 1.5125, Segmentation Loss: 0.8736, Classification Loss: 0.6389
+[5/9][30/122] Total Loss: 1.4799, Segmentation Loss: 0.8410, Classification Loss: 0.6389
+[5/9][31/122] Total Loss: 1.7164, Segmentation Loss: 0.9347, Classification Loss: 0.7817
+[5/9][32/122] Total Loss: 1.5108, Segmentation Loss: 0.8719, Classification Loss: 0.6389
+[5/9][33/122] Total Loss: 1.6251, Segmentation Loss: 0.9148, Classification Loss: 0.7103
+[5/9][34/122] Total Loss: 1.5199, Segmentation Loss: 0.8811, Classification Loss: 0.6389
+[5/9][35/122] Total Loss: 1.4840, Segmentation Loss: 0.8451, Classification Loss: 0.6389
+[5/9][36/122] Total Loss: 1.4833, Segmentation Loss: 0.8444, Classification Loss: 0.6389
+[5/9][37/122] Total Loss: 1.4890, Segmentation Loss: 0.8501, Classification Loss: 0.6389
+[5/9][38/122] Total Loss: 1.5069, Segmentation Loss: 0.8680, Classification Loss: 0.6389
+[5/9][39/122] Total Loss: 1.5044, Segmentation Loss: 0.8655, Classification Loss: 0.6389
+[5/9][40/122] Total Loss: 1.4822, Segmentation Loss: 0.8433, Classification Loss: 0.6389
+[5/9][41/122] Total Loss: 1.4967, Segmentation Loss: 0.8578, Classification Loss: 0.6389
+[5/9][42/122] Total Loss: 1.4880, Segmentation Loss: 0.8491, Classification Loss: 0.6389
+[5/9][43/122] Total Loss: 1.4984, Segmentation Loss: 0.8596, Classification Loss: 0.6389
+[5/9][44/122] Total Loss: 1.6379, Segmentation Loss: 0.9276, Classification Loss: 0.7103
+[5/9][45/122] Total Loss: 1.4804, Segmentation Loss: 0.8415, Classification Loss: 0.6389
+[5/9][46/122] Total Loss: 1.4858, Segmentation Loss: 0.8470, Classification Loss: 0.6389
+[5/9][47/122] Total Loss: 1.4746, Segmentation Loss: 0.8357, Classification Loss: 0.6389
+[5/9][48/122] Total Loss: 1.5021, Segmentation Loss: 0.8632, Classification Loss: 0.6389
+[5/9][49/122] Total Loss: 1.5343, Segmentation Loss: 0.8954, Classification Loss: 0.6389
+[5/9][50/122] Total Loss: 1.4912, Segmentation Loss: 0.8524, Classification Loss: 0.6389
+[5/9][51/122] Total Loss: 1.4747, Segmentation Loss: 0.8358, Classification Loss: 0.6389
+[5/9][52/122] Total Loss: 1.4996, Segmentation Loss: 0.8608, Classification Loss: 0.6389
+[5/9][53/122] Total Loss: 1.4955, Segmentation Loss: 0.8567, Classification Loss: 0.6389
+[5/9][54/122] Total Loss: 1.4968, Segmentation Loss: 0.8579, Classification Loss: 0.6389
+[5/9][55/122] Total Loss: 1.4887, Segmentation Loss: 0.8498, Classification Loss: 0.6389
+[5/9][56/122] Total Loss: 1.4890, Segmentation Loss: 0.8501, Classification Loss: 0.6389
+[5/9][57/122] Total Loss: 1.4854, Segmentation Loss: 0.8465, Classification Loss: 0.6389
+[5/9][58/122] Total Loss: 1.5300, Segmentation Loss: 0.8911, Classification Loss: 0.6389
+[5/9][59/122] Total Loss: 1.4743, Segmentation Loss: 0.8354, Classification Loss: 0.6389
+[5/9][60/122] Total Loss: 1.5074, Segmentation Loss: 0.8685, Classification Loss: 0.6389
+[5/9][61/122] Total Loss: 1.4874, Segmentation Loss: 0.8485, Classification Loss: 0.6389
+[5/9][62/122] Total Loss: 1.5077, Segmentation Loss: 0.8689, Classification Loss: 0.6389
+[5/9][63/122] Total Loss: 1.5054, Segmentation Loss: 0.8665, Classification Loss: 0.6389
+[5/9][64/122] Total Loss: 1.4928, Segmentation Loss: 0.8539, Classification Loss: 0.6389
+[5/9][65/122] Total Loss: 1.5086, Segmentation Loss: 0.8697, Classification Loss: 0.6389
+[5/9][66/122] Total Loss: 1.5292, Segmentation Loss: 0.8903, Classification Loss: 0.6389
+[5/9][67/122] Total Loss: 1.5155, Segmentation Loss: 0.8767, Classification Loss: 0.6389
+[5/9][68/122] Total Loss: 1.4439, Segmentation Loss: 0.8529, Classification Loss: 0.5910
+[5/9][69/122] Total Loss: 1.4326, Segmentation Loss: 0.8480, Classification Loss: 0.5846
+[5/9][70/122] Total Loss: 1.4387, Segmentation Loss: 0.8541, Classification Loss: 0.5846
+[5/9][71/122] Total Loss: 1.4230, Segmentation Loss: 0.8384, Classification Loss: 0.5846
+[5/9][72/122] Total Loss: 1.5095, Segmentation Loss: 0.8535, Classification Loss: 0.6560
+[5/9][73/122] Total Loss: 1.4476, Segmentation Loss: 0.8630, Classification Loss: 0.5846
+[5/9][74/122] Total Loss: 1.4529, Segmentation Loss: 0.8683, Classification Loss: 0.5846
+[5/9][75/122] Total Loss: 1.4279, Segmentation Loss: 0.8406, Classification Loss: 0.5873
+[5/9][76/122] Total Loss: 1.5270, Segmentation Loss: 0.9424, Classification Loss: 0.5846
+[5/9][77/122] Total Loss: 1.5251, Segmentation Loss: 0.8664, Classification Loss: 0.6588
+[5/9][78/122] Total Loss: 1.4796, Segmentation Loss: 0.8950, Classification Loss: 0.5846
+[5/9][79/122] Total Loss: 1.4997, Segmentation Loss: 0.8410, Classification Loss: 0.6588
+[5/9][80/122] Total Loss: 1.4220, Segmentation Loss: 0.8347, Classification Loss: 0.5873
+[5/9][81/122] Total Loss: 1.6059, Segmentation Loss: 0.8785, Classification Loss: 0.7275
+[5/9][82/122] Total Loss: 1.4425, Segmentation Loss: 0.8579, Classification Loss: 0.5846
+[5/9][83/122] Total Loss: 1.5205, Segmentation Loss: 0.8644, Classification Loss: 0.6560
+[5/9][84/122] Total Loss: 1.4320, Segmentation Loss: 0.8474, Classification Loss: 0.5846
+[5/9][85/122] Total Loss: 1.4469, Segmentation Loss: 0.8623, Classification Loss: 0.5846
+[5/9][86/122] Total Loss: 1.4311, Segmentation Loss: 0.8465, Classification Loss: 0.5846
+[5/9][87/122] Total Loss: 1.4546, Segmentation Loss: 0.8700, Classification Loss: 0.5846
+[5/9][88/122] Total Loss: 1.5099, Segmentation Loss: 0.8538, Classification Loss: 0.6560
+[5/9][89/122] Total Loss: 1.4978, Segmentation Loss: 0.8418, Classification Loss: 0.6560
+[5/9][90/122] Total Loss: 1.4131, Segmentation Loss: 0.8285, Classification Loss: 0.5845
+[5/9][91/122] Total Loss: 1.6106, Segmentation Loss: 0.8659, Classification Loss: 0.7446
+[5/9][92/122] Total Loss: 1.3982, Segmentation Loss: 0.8679, Classification Loss: 0.5303
+[5/9][93/122] Total Loss: 1.3949, Segmentation Loss: 0.8474, Classification Loss: 0.5475
+[5/9][94/122] Total Loss: 1.3901, Segmentation Loss: 0.8426, Classification Loss: 0.5475
+[5/9][95/122] Total Loss: 1.3377, Segmentation Loss: 0.8616, Classification Loss: 0.4761
+[5/9][96/122] Total Loss: 1.3333, Segmentation Loss: 0.8572, Classification Loss: 0.4761
+[5/9][97/122] Total Loss: 1.4965, Segmentation Loss: 0.8775, Classification Loss: 0.6189
+[5/9][98/122] Total Loss: 1.4104, Segmentation Loss: 0.8601, Classification Loss: 0.5502
+[5/9][99/122] Total Loss: 1.7411, Segmentation Loss: 0.9168, Classification Loss: 0.8244
+[5/9][100/122] Total Loss: 1.4854, Segmentation Loss: 0.8638, Classification Loss: 0.6216
+[5/9][101/122] Total Loss: 1.4386, Segmentation Loss: 0.8911, Classification Loss: 0.5475
+[5/9][102/122] Total Loss: 1.4043, Segmentation Loss: 0.8568, Classification Loss: 0.5475
+[5/9][103/122] Total Loss: 1.5650, Segmentation Loss: 0.8747, Classification Loss: 0.6904
+[5/9][104/122] Total Loss: 1.4414, Segmentation Loss: 0.8885, Classification Loss: 0.5529
+[5/9][105/122] Total Loss: 1.4751, Segmentation Loss: 0.8535, Classification Loss: 0.6216
+[5/9][106/122] Total Loss: 1.3214, Segmentation Loss: 0.8453, Classification Loss: 0.4761
+[5/9][107/122] Total Loss: 1.4052, Segmentation Loss: 0.8496, Classification Loss: 0.5556
+[5/9][108/122] Total Loss: 1.5452, Segmentation Loss: 0.8593, Classification Loss: 0.6859
+[5/9][109/122] Total Loss: 1.3966, Segmentation Loss: 0.8491, Classification Loss: 0.5475
+[5/9][110/122] Total Loss: 1.3589, Segmentation Loss: 0.8828, Classification Loss: 0.4761
+[5/9][111/122] Total Loss: 1.4153, Segmentation Loss: 0.8678, Classification Loss: 0.5475
+[5/9][112/122] Total Loss: 1.3955, Segmentation Loss: 0.8480, Classification Loss: 0.5475
+[5/9][113/122] Total Loss: 1.5349, Segmentation Loss: 0.8445, Classification Loss: 0.6904
+[5/9][114/122] Total Loss: 1.6726, Segmentation Loss: 0.9108, Classification Loss: 0.7618
+[5/9][115/122] Total Loss: 1.3883, Segmentation Loss: 0.8381, Classification Loss: 0.5502
+[5/9][116/122] Total Loss: 1.5449, Segmentation Loss: 0.8545, Classification Loss: 0.6904
+[5/9][117/122] Total Loss: 1.3460, Segmentation Loss: 0.8645, Classification Loss: 0.4815
+[5/9][118/122] Total Loss: 1.5817, Segmentation Loss: 0.8914, Classification Loss: 0.6904
+[5/9][119/122] Total Loss: 1.4110, Segmentation Loss: 0.8608, Classification Loss: 0.5502
+[5/9][120/122] Total Loss: 1.3259, Segmentation Loss: 0.8472, Classification Loss: 0.4788
+[5/9][121/122] Total Loss: 1.3170, Segmentation Loss: 0.8409, Classification Loss: 0.4761
+[5/9][122/122] Total Loss: 1.4780, Segmentation Loss: 0.8536, Classification Loss: 0.6244
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[5/9][0/30] Total Loss: 1.6659, Segmentation Loss: 0.9041, Classification Loss: 0.7618
+[5/9][1/30] Total Loss: 1.4946, Segmentation Loss: 0.8757, Classification Loss: 0.6189
+[5/9][2/30] Total Loss: 1.6513, Segmentation Loss: 0.8895, Classification Loss: 0.7618
+[5/9][3/30] Total Loss: 1.7154, Segmentation Loss: 0.8822, Classification Loss: 0.8332
+[5/9][4/30] Total Loss: 1.5128, Segmentation Loss: 0.8939, Classification Loss: 0.6189
+[5/9][5/30] Total Loss: 1.4918, Segmentation Loss: 0.8729, Classification Loss: 0.6189
+[5/9][6/30] Total Loss: 1.5942, Segmentation Loss: 0.9038, Classification Loss: 0.6904
+[5/9][7/30] Total Loss: 1.5147, Segmentation Loss: 0.8958, Classification Loss: 0.6189
+[5/9][8/30] Total Loss: 1.6740, Segmentation Loss: 0.9123, Classification Loss: 0.7618
+[5/9][9/30] Total Loss: 1.3591, Segmentation Loss: 0.8830, Classification Loss: 0.4761
+[5/9][10/30] Total Loss: 1.5056, Segmentation Loss: 0.8867, Classification Loss: 0.6189
+[5/9][11/30] Total Loss: 1.7227, Segmentation Loss: 0.8895, Classification Loss: 0.8332
+[5/9][12/30] Total Loss: 1.7075, Segmentation Loss: 0.8743, Classification Loss: 0.8332
+[5/9][13/30] Total Loss: 1.4881, Segmentation Loss: 0.8692, Classification Loss: 0.6189
+[5/9][14/30] Total Loss: 1.4323, Segmentation Loss: 0.8848, Classification Loss: 0.5475
+[5/9][15/30] Total Loss: 1.6096, Segmentation Loss: 0.9192, Classification Loss: 0.6904
+[5/9][16/30] Total Loss: 1.6118, Segmentation Loss: 0.9215, Classification Loss: 0.6904
+[5/9][17/30] Total Loss: 1.3487, Segmentation Loss: 0.8726, Classification Loss: 0.4761
+[5/9][18/30] Total Loss: 1.7417, Segmentation Loss: 0.9085, Classification Loss: 0.8332
+[5/9][19/30] Total Loss: 1.5092, Segmentation Loss: 0.8903, Classification Loss: 0.6189
+[5/9][20/30] Total Loss: 1.7922, Segmentation Loss: 0.8876, Classification Loss: 0.9046
+[5/9][21/30] Total Loss: 1.4967, Segmentation Loss: 0.8778, Classification Loss: 0.6189
+[5/9][22/30] Total Loss: 1.5701, Segmentation Loss: 0.8797, Classification Loss: 0.6904
+[5/9][23/30] Total Loss: 1.5738, Segmentation Loss: 0.8834, Classification Loss: 0.6904
+[5/9][24/30] Total Loss: 1.5575, Segmentation Loss: 0.8671, Classification Loss: 0.6904
+[5/9][25/30] Total Loss: 1.4408, Segmentation Loss: 0.8933, Classification Loss: 0.5475
+[5/9][26/30] Total Loss: 1.5578, Segmentation Loss: 0.8675, Classification Loss: 0.6904
+[5/9][27/30] Total Loss: 1.5016, Segmentation Loss: 0.8827, Classification Loss: 0.6189
+[5/9][28/30] Total Loss: 1.5060, Segmentation Loss: 0.8871, Classification Loss: 0.6189
+[5/9][29/30] Total Loss: 1.7307, Segmentation Loss: 0.8975, Classification Loss: 0.8332
+[5/9][30/30] Total Loss: 1.4933, Segmentation Loss: 0.8744, Classification Loss: 0.6189
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.09047353674378993, Class-wise IoU: tensor([2.3782e-04, 1.5482e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 9.8416e-05,
+        0.0000e+00, 3.8061e-03, 0.0000e+00, 0.0000e+00, 3.4321e-01, 2.9671e-01,
+        9.7583e-02, 1.1443e-01, 2.7399e-03, 4.1726e-03, 0.0000e+00, 0.0000e+00,
+        8.4053e-01], dtype=torch.float64)
+Mean Precision: 0.12531191281067222, Class-wise Precision: tensor([7.3937e-03, 2.4324e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 8.8339e-04,
+        0.0000e+00, 8.5427e-03, 0.0000e+00, 0.0000e+00, 4.7109e-01, 4.7455e-01,
+        1.8346e-01, 1.4740e-01, 5.5619e-03, 7.7773e-02, 0.0000e+00, 0.0000e+00,
+        9.7995e-01], dtype=torch.float64)
+Mean Recall: 0.12759048183943333, Class-wise Recall: tensor([2.4566e-04, 4.0851e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.1074e-04,
+        0.0000e+00, 6.8177e-03, 0.0000e+00, 0.0000e+00, 5.5838e-01, 4.4188e-01,
+        1.7251e-01, 3.3843e-01, 5.3710e-03, 4.3898e-03, 0.0000e+00, 0.0000e+00,
+        8.5523e-01], dtype=torch.float64)
+Mean F1: 0.12198515970761437, Class-wise F1: tensor([4.7552e-04, 3.0492e-02, 0.0000e+00, 0.0000e+00, 0.0000e+00, 1.9681e-04,
+        0.0000e+00, 7.5834e-03, 0.0000e+00, 0.0000e+00, 5.1103e-01, 4.5763e-01,
+        1.7781e-01, 2.0536e-01, 5.4648e-03, 8.3105e-03, 0.0000e+00, 0.0000e+00,
+        9.1335e-01], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+[6/9][0/122] Total Loss: 1.4736, Segmentation Loss: 0.8520, Classification Loss: 0.6216
+[6/9][1/122] Total Loss: 1.3936, Segmentation Loss: 0.8434, Classification Loss: 0.5502
+[6/9][2/122] Total Loss: 1.3830, Segmentation Loss: 0.9069, Classification Loss: 0.4761
+[6/9][3/122] Total Loss: 1.5618, Segmentation Loss: 0.8687, Classification Loss: 0.6931
+[6/9][4/122] Total Loss: 1.5541, Segmentation Loss: 0.8584, Classification Loss: 0.6958
+[6/9][5/122] Total Loss: 1.4103, Segmentation Loss: 0.8573, Classification Loss: 0.5529
+[6/9][6/122] Total Loss: 1.3927, Segmentation Loss: 0.8398, Classification Loss: 0.5529
+[6/9][7/122] Total Loss: 1.4756, Segmentation Loss: 0.8566, Classification Loss: 0.6189
+[6/9][8/122] Total Loss: 1.3821, Segmentation Loss: 0.8346, Classification Loss: 0.5475
+[6/9][9/122] Total Loss: 1.3070, Segmentation Loss: 0.8309, Classification Loss: 0.4761
+[6/9][10/122] Total Loss: 1.4784, Segmentation Loss: 0.8595, Classification Loss: 0.6189
+[6/9][11/122] Total Loss: 1.4280, Segmentation Loss: 0.8806, Classification Loss: 0.5475
+[6/9][12/122] Total Loss: 1.3119, Segmentation Loss: 0.8358, Classification Loss: 0.4761
+[6/9][13/122] Total Loss: 1.4377, Segmentation Loss: 0.8296, Classification Loss: 0.6080
+[6/9][14/122] Total Loss: 1.2520, Segmentation Loss: 0.8302, Classification Loss: 0.4218
+[6/9][15/122] Total Loss: 1.5219, Segmentation Loss: 0.8858, Classification Loss: 0.6361
+[6/9][16/122] Total Loss: 1.6171, Segmentation Loss: 0.8382, Classification Loss: 0.7789
+[6/9][17/122] Total Loss: 1.4024, Segmentation Loss: 0.8377, Classification Loss: 0.5647
+[6/9][18/122] Total Loss: 1.6979, Segmentation Loss: 0.9190, Classification Loss: 0.7789
+[6/9][19/122] Total Loss: 1.4321, Segmentation Loss: 0.8675, Classification Loss: 0.5647
+[6/9][20/122] Total Loss: 1.4152, Segmentation Loss: 0.8506, Classification Loss: 0.5647
+[6/9][21/122] Total Loss: 1.6419, Segmentation Loss: 0.8630, Classification Loss: 0.7789
+[6/9][22/122] Total Loss: 1.3299, Segmentation Loss: 0.8366, Classification Loss: 0.4932
+[6/9][23/122] Total Loss: 1.4182, Segmentation Loss: 0.8535, Classification Loss: 0.5647
+[6/9][24/122] Total Loss: 1.5407, Segmentation Loss: 0.8332, Classification Loss: 0.7075
+[6/9][25/122] Total Loss: 1.4776, Segmentation Loss: 0.8415, Classification Loss: 0.6361
+[6/9][26/122] Total Loss: 1.3516, Segmentation Loss: 0.8583, Classification Loss: 0.4932
+[6/9][27/122] Total Loss: 1.4361, Segmentation Loss: 0.8714, Classification Loss: 0.5647
+[6/9][28/122] Total Loss: 1.4923, Segmentation Loss: 0.8562, Classification Loss: 0.6361
+[6/9][29/122] Total Loss: 1.2568, Segmentation Loss: 0.8355, Classification Loss: 0.4213
+[6/9][30/122] Total Loss: 1.2069, Segmentation Loss: 0.8393, Classification Loss: 0.3675
+[6/9][31/122] Total Loss: 1.5110, Segmentation Loss: 0.8577, Classification Loss: 0.6532
+[6/9][32/122] Total Loss: 1.3623, Segmentation Loss: 0.8519, Classification Loss: 0.5104
+[6/9][33/122] Total Loss: 1.6322, Segmentation Loss: 0.8361, Classification Loss: 0.7961
+[6/9][34/122] Total Loss: 1.4436, Segmentation Loss: 0.8618, Classification Loss: 0.5818
+[6/9][35/122] Total Loss: 1.5302, Segmentation Loss: 0.8770, Classification Loss: 0.6532
+[6/9][36/122] Total Loss: 1.9856, Segmentation Loss: 0.9037, Classification Loss: 1.0818
+[6/9][37/122] Total Loss: 1.4419, Segmentation Loss: 0.8601, Classification Loss: 0.5818
+[6/9][38/122] Total Loss: 1.2834, Segmentation Loss: 0.8444, Classification Loss: 0.4390
+[6/9][39/122] Total Loss: 1.4665, Segmentation Loss: 0.8847, Classification Loss: 0.5818
+[6/9][40/122] Total Loss: 1.3053, Segmentation Loss: 0.8664, Classification Loss: 0.4390
+[6/9][41/122] Total Loss: 1.5729, Segmentation Loss: 0.8482, Classification Loss: 0.7247
+[6/9][42/122] Total Loss: 1.6390, Segmentation Loss: 0.9143, Classification Loss: 0.7247
+[6/9][43/122] Total Loss: 1.4427, Segmentation Loss: 0.8609, Classification Loss: 0.5818
+[6/9][44/122] Total Loss: 1.6225, Segmentation Loss: 0.8979, Classification Loss: 0.7247
+[6/9][45/122] Total Loss: 1.8368, Segmentation Loss: 0.8978, Classification Loss: 0.9390
+[6/9][46/122] Total Loss: 1.6224, Segmentation Loss: 0.8978, Classification Loss: 0.7247
+[6/9][47/122] Total Loss: 1.3183, Segmentation Loss: 0.8794, Classification Loss: 0.4390
+[6/9][48/122] Total Loss: 1.4754, Segmentation Loss: 0.8935, Classification Loss: 0.5818
+[6/9][49/122] Total Loss: 1.6434, Segmentation Loss: 0.8473, Classification Loss: 0.7961
+[6/9][50/122] Total Loss: 1.2146, Segmentation Loss: 0.8471, Classification Loss: 0.3675
+[6/9][51/122] Total Loss: 1.3487, Segmentation Loss: 0.8383, Classification Loss: 0.5104
+[6/9][52/122] Total Loss: 1.4598, Segmentation Loss: 0.8780, Classification Loss: 0.5818
+[6/9][53/122] Total Loss: 1.6238, Segmentation Loss: 0.8991, Classification Loss: 0.7247
+[6/9][54/122] Total Loss: 1.2169, Segmentation Loss: 0.8494, Classification Loss: 0.3675
+[6/9][55/122] Total Loss: 1.2863, Segmentation Loss: 0.8474, Classification Loss: 0.4390
+[6/9][56/122] Total Loss: 1.5718, Segmentation Loss: 0.8471, Classification Loss: 0.7247
+[6/9][57/122] Total Loss: 1.4572, Segmentation Loss: 0.8754, Classification Loss: 0.5818
+[6/9][58/122] Total Loss: 1.3990, Segmentation Loss: 0.8886, Classification Loss: 0.5104
+[6/9][59/122] Total Loss: 1.3546, Segmentation Loss: 0.8442, Classification Loss: 0.5104
+[6/9][60/122] Total Loss: 1.2722, Segmentation Loss: 0.8332, Classification Loss: 0.4390
+[6/9][61/122] Total Loss: 1.4221, Segmentation Loss: 0.8403, Classification Loss: 0.5818
+[6/9][62/122] Total Loss: 1.2364, Segmentation Loss: 0.8688, Classification Loss: 0.3675
+[6/9][63/122] Total Loss: 1.5173, Segmentation Loss: 0.8641, Classification Loss: 0.6532
+[6/9][64/122] Total Loss: 1.4937, Segmentation Loss: 0.8404, Classification Loss: 0.6532
+[6/9][65/122] Total Loss: 1.3022, Segmentation Loss: 0.8633, Classification Loss: 0.4390
+[6/9][66/122] Total Loss: 1.2717, Segmentation Loss: 0.8327, Classification Loss: 0.4390
+[6/9][67/122] Total Loss: 1.6041, Segmentation Loss: 0.8794, Classification Loss: 0.7247
+[6/9][68/122] Total Loss: 1.6696, Segmentation Loss: 0.8735, Classification Loss: 0.7961
+[6/9][69/122] Total Loss: 1.3487, Segmentation Loss: 0.8384, Classification Loss: 0.5104
+[6/9][70/122] Total Loss: 1.2171, Segmentation Loss: 0.8496, Classification Loss: 0.3675
+[6/9][71/122] Total Loss: 1.7466, Segmentation Loss: 0.8790, Classification Loss: 0.8675
+[6/9][72/122] Total Loss: 1.5803, Segmentation Loss: 0.8556, Classification Loss: 0.7247
+[6/9][73/122] Total Loss: 1.4241, Segmentation Loss: 0.8395, Classification Loss: 0.5845
+[6/9][74/122] Total Loss: 1.3440, Segmentation Loss: 0.8336, Classification Loss: 0.5104
+[6/9][75/122] Total Loss: 1.3454, Segmentation Loss: 0.8351, Classification Loss: 0.5104
+[6/9][76/122] Total Loss: 1.5282, Segmentation Loss: 0.8749, Classification Loss: 0.6532
+[6/9][77/122] Total Loss: 1.4618, Segmentation Loss: 0.8800, Classification Loss: 0.5818
+[6/9][78/122] Total Loss: 1.3533, Segmentation Loss: 0.8429, Classification Loss: 0.5104
+[6/9][79/122] Total Loss: 1.5665, Segmentation Loss: 0.8419, Classification Loss: 0.7247
+[6/9][80/122] Total Loss: 1.4364, Segmentation Loss: 0.8545, Classification Loss: 0.5818
+[6/9][81/122] Total Loss: 1.6033, Segmentation Loss: 0.8786, Classification Loss: 0.7247
+[6/9][82/122] Total Loss: 1.4690, Segmentation Loss: 0.8872, Classification Loss: 0.5818
+[6/9][83/122] Total Loss: 1.5001, Segmentation Loss: 0.8469, Classification Loss: 0.6532
+[6/9][84/122] Total Loss: 1.4205, Segmentation Loss: 0.8387, Classification Loss: 0.5818
+[6/9][85/122] Total Loss: 1.2160, Segmentation Loss: 0.8485, Classification Loss: 0.3675
+[6/9][86/122] Total Loss: 1.3682, Segmentation Loss: 0.8578, Classification Loss: 0.5104
+[6/9][87/122] Total Loss: 1.5310, Segmentation Loss: 0.8778, Classification Loss: 0.6532
+[6/9][88/122] Total Loss: 1.5132, Segmentation Loss: 0.8599, Classification Loss: 0.6532
+[6/9][89/122] Total Loss: 1.6873, Segmentation Loss: 0.8912, Classification Loss: 0.7961
+[6/9][90/122] Total Loss: 1.7894, Segmentation Loss: 0.9219, Classification Loss: 0.8675
+[6/9][91/122] Total Loss: 1.2066, Segmentation Loss: 0.8391, Classification Loss: 0.3675
+[6/9][92/122] Total Loss: 1.5807, Segmentation Loss: 0.8561, Classification Loss: 0.7247
+[6/9][93/122] Total Loss: 1.7557, Segmentation Loss: 0.8882, Classification Loss: 0.8675
+[6/9][94/122] Total Loss: 1.4183, Segmentation Loss: 0.8365, Classification Loss: 0.5818
+[6/9][95/122] Total Loss: 1.6425, Segmentation Loss: 0.8464, Classification Loss: 0.7961
+[6/9][96/122] Total Loss: 1.4850, Segmentation Loss: 0.8317, Classification Loss: 0.6532
+[6/9][97/122] Total Loss: 1.6526, Segmentation Loss: 0.8610, Classification Loss: 0.7917
+[6/9][98/122] Total Loss: 1.2797, Segmentation Loss: 0.8408, Classification Loss: 0.4390
+[6/9][99/122] Total Loss: 1.3491, Segmentation Loss: 0.8388, Classification Loss: 0.5104
+[6/9][100/122] Total Loss: 1.3402, Segmentation Loss: 0.8298, Classification Loss: 0.5104
+[6/9][101/122] Total Loss: 1.3919, Segmentation Loss: 0.8815, Classification Loss: 0.5104
+[6/9][102/122] Total Loss: 1.3125, Segmentation Loss: 0.8709, Classification Loss: 0.4417
+[6/9][103/122] Total Loss: 1.6919, Segmentation Loss: 0.8958, Classification Loss: 0.7961
+[6/9][104/122] Total Loss: 1.2741, Segmentation Loss: 0.8351, Classification Loss: 0.4390
+[6/9][105/122] Total Loss: 1.7269, Segmentation Loss: 0.8593, Classification Loss: 0.8675
+[6/9][106/122] Total Loss: 1.3639, Segmentation Loss: 0.8535, Classification Loss: 0.5104
+[6/9][107/122] Total Loss: 1.3723, Segmentation Loss: 0.8620, Classification Loss: 0.5104
+[6/9][108/122] Total Loss: 1.8571, Segmentation Loss: 0.9182, Classification Loss: 0.9390
+[6/9][109/122] Total Loss: 1.4418, Segmentation Loss: 0.8600, Classification Loss: 0.5818
+[6/9][110/122] Total Loss: 1.4473, Segmentation Loss: 0.8655, Classification Loss: 0.5818
+[6/9][111/122] Total Loss: 1.5080, Segmentation Loss: 0.8547, Classification Loss: 0.6532
+[6/9][112/122] Total Loss: 1.4417, Segmentation Loss: 0.8599, Classification Loss: 0.5818
+[6/9][113/122] Total Loss: 1.3708, Segmentation Loss: 0.8604, Classification Loss: 0.5104
+[6/9][114/122] Total Loss: 1.5447, Segmentation Loss: 0.8914, Classification Loss: 0.6532
+[6/9][115/122] Total Loss: 1.4277, Segmentation Loss: 0.8459, Classification Loss: 0.5818
+[6/9][116/122] Total Loss: 1.3343, Segmentation Loss: 0.8927, Classification Loss: 0.4417
+[6/9][117/122] Total Loss: 1.2887, Segmentation Loss: 0.8470, Classification Loss: 0.4417
+[6/9][118/122] Total Loss: 1.7701, Segmentation Loss: 0.9026, Classification Loss: 0.8675
+[6/9][119/122] Total Loss: 1.4284, Segmentation Loss: 0.8466, Classification Loss: 0.5818
+[6/9][120/122] Total Loss: 1.4180, Segmentation Loss: 0.8362, Classification Loss: 0.5818
+[6/9][121/122] Total Loss: 1.2026, Segmentation Loss: 0.8350, Classification Loss: 0.3675
+[6/9][122/122] Total Loss: 1.6390, Segmentation Loss: 0.8429, Classification Loss: 0.7961
+>>>>>>>>>>>>>>>>>>>>>>>Testing<<<<<<<<<<<<<<<<<<<<<<<
+[6/9][0/30] Total Loss: 1.9452, Segmentation Loss: 0.9348, Classification Loss: 1.0104
+[6/9][1/30] Total Loss: 1.9816, Segmentation Loss: 0.8998, Classification Loss: 1.0818
+[6/9][2/30] Total Loss: 1.4725, Segmentation Loss: 0.8907, Classification Loss: 0.5818
+[6/9][3/30] Total Loss: 1.5330, Segmentation Loss: 0.8797, Classification Loss: 0.6532
+[6/9][4/30] Total Loss: 1.6746, Segmentation Loss: 0.8785, Classification Loss: 0.7961
+[6/9][5/30] Total Loss: 1.6809, Segmentation Loss: 0.8848, Classification Loss: 0.7961
+[6/9][6/30] Total Loss: 1.8227, Segmentation Loss: 0.8837, Classification Loss: 0.9390
+[6/9][7/30] Total Loss: 1.3970, Segmentation Loss: 0.8866, Classification Loss: 0.5104
+[6/9][8/30] Total Loss: 1.8969, Segmentation Loss: 0.8865, Classification Loss: 1.0104
+[6/9][9/30] Total Loss: 1.6804, Segmentation Loss: 0.8843, Classification Loss: 0.7961
+[6/9][10/30] Total Loss: 1.8270, Segmentation Loss: 0.8881, Classification Loss: 0.9390
+[6/9][11/30] Total Loss: 1.6779, Segmentation Loss: 0.8818, Classification Loss: 0.7961
+[6/9][12/30] Total Loss: 1.6148, Segmentation Loss: 0.8901, Classification Loss: 0.7247
+[6/9][13/30] Total Loss: 2.0008, Segmentation Loss: 0.9190, Classification Loss: 1.0818
+[6/9][14/30] Total Loss: 1.5368, Segmentation Loss: 0.8835, Classification Loss: 0.6532
+[6/9][15/30] Total Loss: 1.6321, Segmentation Loss: 0.9074, Classification Loss: 0.7247
+[6/9][16/30] Total Loss: 1.4461, Segmentation Loss: 0.8643, Classification Loss: 0.5818
+[6/9][17/30] Total Loss: 1.6606, Segmentation Loss: 0.8645, Classification Loss: 0.7961
+[6/9][18/30] Total Loss: 1.6038, Segmentation Loss: 0.8791, Classification Loss: 0.7247
+[6/9][19/30] Total Loss: 1.6859, Segmentation Loss: 0.8898, Classification Loss: 0.7961
+[6/9][20/30] Total Loss: 1.5438, Segmentation Loss: 0.8905, Classification Loss: 0.6532
+[6/9][21/30] Total Loss: 1.6005, Segmentation Loss: 0.8758, Classification Loss: 0.7247
+[6/9][22/30] Total Loss: 1.9116, Segmentation Loss: 0.9012, Classification Loss: 1.0104
+[6/9][23/30] Total Loss: 1.6176, Segmentation Loss: 0.8929, Classification Loss: 0.7247
+[6/9][24/30] Total Loss: 1.7321, Segmentation Loss: 0.8646, Classification Loss: 0.8675
+[6/9][25/30] Total Loss: 1.6663, Segmentation Loss: 0.8702, Classification Loss: 0.7961
+[6/9][26/30] Total Loss: 1.8948, Segmentation Loss: 0.8844, Classification Loss: 1.0104
+[6/9][27/30] Total Loss: 1.5651, Segmentation Loss: 0.9119, Classification Loss: 0.6532
+[6/9][28/30] Total Loss: 1.9689, Segmentation Loss: 0.8871, Classification Loss: 1.0818
+[6/9][29/30] Total Loss: 1.7349, Segmentation Loss: 0.8674, Classification Loss: 0.8675
+[6/9][30/30] Total Loss: 1.5431, Segmentation Loss: 0.8899, Classification Loss: 0.6532
+>>>>>>>>>>>>>>>>>> Evaluating the Metrics <<<<<<<<<<<<<<<<<
+Mean IoU: 0.08948995062266786, Class-wise IoU: tensor([3.9337e-04, 1.9657e-02, 0.0000e+00, 3.1403e-03, 0.0000e+00, 0.0000e+00,
+        0.0000e+00, 6.7623e-03, 0.0000e+00, 0.0000e+00, 2.9999e-01, 3.0665e-01,
+        9.9526e-02, 1.2257e-01, 2.2401e-03, 5.5078e-04, 0.0000e+00, 0.0000e+00,
+        8.3883e-01], dtype=torch.float64)
+Mean Precision: 0.12457292594181175, Class-wise Precision: tensor([0.0099, 0.0278, 0.0000, 0.0744, 0.0000, 0.0000, 0.0000, 0.0092, 0.0000,
+        0.0000, 0.4763, 0.4652, 0.2051, 0.1463, 0.0046, 0.0759, 0.0000, 0.0000,
+        0.8720], dtype=torch.float64)
+Mean Recall: 0.1350768689107694, Class-wise Recall: tensor([4.0943e-04, 6.2710e-02, 0.0000e+00, 3.2679e-03, 0.0000e+00, 0.0000e+00,
+        0.0000e+00, 2.4764e-02, 0.0000e+00, 0.0000e+00, 4.4761e-01, 4.7358e-01,
+        1.6203e-01, 4.3054e-01, 4.3845e-03, 5.5450e-04, 0.0000e+00, 0.0000e+00,
+        9.5660e-01], dtype=torch.float64)
+Mean F1: 0.12143469580350957, Class-wise F1: tensor([7.8643e-04, 3.8556e-02, 0.0000e+00, 6.2609e-03, 0.0000e+00, 0.0000e+00,
+        0.0000e+00, 1.3434e-02, 0.0000e+00, 0.0000e+00, 4.6153e-01, 4.6937e-01,
+        1.8103e-01, 2.1837e-01, 4.4703e-03, 1.1010e-03, 0.0000e+00, 0.0000e+00,
+        9.1235e-01], dtype=torch.float64)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
+-----use_gpu  False ------
+Namespace(batchSize=2, bnMomentum=0.1, epochs=10, evaluate=False, imageSize=256, lr=0.005, print_freq=1, resizedImageSize=224, resume='', saveTest='True', save_dir='save_MiccaiSegPlusClass', start_epoch=0, wd=0.0005, workers=4)
+=> no checkpoint found at ''
+segnetPlusClass(
+  (encoder): encoder(
+    (main): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): ReLU(inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): ReLU(inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU(inplace=True)
+      (11): Conv2d(512, 1024, kernel_size=(4, 4), stride=(1, 1))
+      (12): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (13): ReLU(inplace=True)
+    )
+  )
+  (decoder): decoder(
+    (main): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): Dropout2d(p=0.5, inplace=False)
+      (3): ReLU(inplace=True)
+      (4): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Dropout2d(p=0.5, inplace=False)
+      (7): ReLU(inplace=True)
+      (8): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): Dropout2d(p=0.5, inplace=False)
+      (11): ReLU(inplace=True)
+      (12): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (13): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU(inplace=True)
+      (15): ConvTranspose2d(64, 19, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    )
+    (classifier): Conv2d(19, 7, kernel_size=(224, 224), stride=(1, 1))
+    (smax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+>>>>>>>>>>>>>>>>>>>>>>>Training<<<<<<<<<<<<<<<<<<<<<<<
